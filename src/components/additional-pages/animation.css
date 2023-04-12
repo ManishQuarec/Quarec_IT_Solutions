@@ -1,0 +1,222 @@
+/* .whole {
+    width: 100%;
+    position: relative;
+    
+    top: 0;
+    left: 0;
+    transform: translate(50%, 50%);
+    border-radius: 100%;
+}
+.first {
+    position: absolute;
+    top: -139px;
+    left: -105px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(50% 50% at 50% 50%, #E5F5FF 0%, #E5F5FF 19.72%);
+    border-radius: 100%;
+    
+    margin: 17px auto;
+    animation: ajay 10s ease infinite;
+}
+.second {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(50% 50% at 50% 50%, #CEECFF 0%, #CEECFF 19.72%);
+    position: absolute;
+    top: -128px;
+    left: -79px;
+    border-radius: 100%;
+    animation: ajay 10s ease infinite;
+}
+.thirth {
+    width: 300px;
+    height: 300px;
+    background: #B9E3FF;
+    position: absolute;
+    top: -73px;
+    border-radius: 100%;
+    left: -51px;
+    animation: ajay 10s ease infinite;
+}
+
+
+
+@keyframes ajay {
+    0%{
+transform: scale(1.0);
+    }
+    50%{
+        transform: scale(1.2, 1.2);
+    }
+    100%{
+        transform: scale(1.0);
+    }
+}
+.banner-img {
+    position: absolute;
+    top: -150px;
+    left: -86px;
+}
+.banner-img img {
+    width: 100%;
+    border-radius: 40%;
+
+}
+
+.banner-img img {
+    width: 78%;
+    border-radius: 40%;
+    height: 54%;
+    position: relative;
+    left: -75px;
+  } */
+
+/* @media only screen and (max-width: 770px){
+.first {
+    width: 310px;
+    height: 310px;}
+ .second {
+     width: 260px;
+    height: 260px;
+ }
+ .thirth {
+     width: 200px;
+     height: 200px;
+ }
+}
+
+@media only screen and (max-width: 425px){
+    .banner-img{
+        width: 50%;
+    }
+
+    .first {
+        width: 220px;
+        height: 220px;}
+     .second {
+         width: 165px;
+        height: 165px;
+     }
+     .thirth {
+         width: 110px;
+         height: 110px;
+     }
+    
+     .we-section-content {
+        padding-top: 190px;
+    }
+
+    .whole {
+        height: 100%;
+        position: relative;
+        width: 100%;
+        top: 93px;
+        left: 0;
+        transform: translate(50%, 50%);
+        border-radius: 100%;
+    }
+} */
+
+.name{
+    text-align:center;
+  /*   margin-top:140px; */
+    font-size:37px;
+    position:relative;
+    font-family: 'Exo', sans-serif;
+    color:#fff;
+  }
+  
+  .cristalBall{
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    z-index:99999;
+  }
+  
+  .background{
+    background-color:white;
+    width:inherit;
+    height:inherit;
+    position:relative;
+    top:0;
+    right: 0;
+  }
+  
+  .circle{
+    background-color:#c70ec7;
+    height:400px;
+    border-radius:50%;
+    width: 400px;
+    margin: auto;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  
+  .circle1{
+    background-color:#fcefff;
+    height:300px;
+    border-radius:50%;
+    width: 300px;
+    margin: auto;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    animation: pulse3 10s linear infinite;
+  }
+  
+  .circle2{
+    background-color:#f3cafc;
+    height:200px;
+    border-radius:50%;
+    width: 200px;
+    margin: auto;
+    position: absolute;
+    top: 50%; left: 50%;
+    color:white;
+    font-size:40px;
+    transform: translate(-50%,-50%);
+    animation: pulse 4s linear infinite;
+  }
+  
+  .circle3{
+    background-color:#ee88fd;
+    height:500px;
+    border-radius:50%;
+    width: 500px;
+    margin: auto;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    font-size:50px;
+    animation: pulse2 3s linear infinite;
+  }
+  
+  .star{
+    transform: translate(350px,50px);
+    opacity:.6;
+  }
+  
+  @keyframes pulse{
+    0%{width:300px;height:700px;}
+    50%{width:350px;height:350px;}
+    100%{width:300px;height:300px;}
+  }
+  
+  @keyframes pulse2{
+    0%{width:400px;height:400px;}
+    50%{width:450px;height:450px;}
+    100%{width:400px;height:400px;}
+  }
+  
+  @keyframes pulse3{
+    0%{width:500px;height:500px;}
+    50%{width:550px;height:550px;}
+    100%{width:500px;height:500px;}
+  }
+
+
+
