@@ -3016,3 +3016,21 @@ nav .navbar {
     text-align: center;
     line-height: 0 !important;
 }
+
+a.nav-item.nav-link.react-tabs {
+    justify-content: center;
+    /* text-align: center; */
+}
+
+.cta-title-wrapper {
+    width: 70%;
+}
+
+.cta-button-wrapper {
+    width: 30%;
+}
+
+.cta-button button {
+    width: 100% !important;
+    line-height: 1.5;
+}

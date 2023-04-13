@@ -226,25 +226,25 @@ export default function Migration() {
             <div class="col-xs-12">
               <div class="tab-react-Development">
                 <ul class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                 <li> <a class="nav-item nav-link active react-tabs" role="tab" aria-selected="true" href="#1" data-toggle="tab">
+                 <li className='other-type-li'> <a class="nav-item nav-link active react-tabs" role="tab" aria-selected="true" href="#1" data-toggle="tab">
                     Libraries
                   </a></li>
-                  <li><a class="nav-item nav-link react-tabs " href="#2" role="tab" aria-selected="false" data-toggle="tab">
+                  <li className='other-type-li'><a class="nav-item nav-link react-tabs " href="#2" role="tab" aria-selected="false" data-toggle="tab">
                     APIs
                   </a></li>
-                  <li><a class="nav-item nav-link react-tabs" href="#3" role="tab" aria-selected="false" data-toggle="tab">
+                  <li className='other-type-li'><a class="nav-item nav-link react-tabs" href="#3" role="tab" aria-selected="false" data-toggle="tab">
                    Platforms
                   </a></li>
-                   <li><a class="nav-item nav-link react-tabs" href="#4" role="tab" aria-selected="false" data-toggle="tab">
+                   <li className='other-type-li'><a class="nav-item nav-link react-tabs" href="#4" role="tab" aria-selected="false" data-toggle="tab">
                    UI Framework
                   </a></li>
-                   <li><a class="nav-item nav-link react-tabs" href="#5" role="tab" aria-selected="false" data-toggle="tab">
+                   <li className='other-type-li' ><a class="nav-item nav-link react-tabs" href="#5" role="tab" aria-selected="false" data-toggle="tab">
                    Database
                   </a></li>
-                   <li><a class="nav-item nav-link react-tabs" href="#6" role="tab" aria-selected="false" data-toggle="tab">
+                   <li className='other-type-li'><a class="nav-item nav-link react-tabs" href="#6" role="tab" aria-selected="false" data-toggle="tab">
                    Tools
                   </a></li>
-                   <li><a class="nav-item nav-link react-tabs" href="#7" role="tab" aria-selected="false" data-toggle="tab">
+                   <li className='other-type-li'><a class="nav-item nav-link react-tabs" href="#7" role="tab" aria-selected="false" data-toggle="tab">
                    Other
                   </a></li>
                 </ul>

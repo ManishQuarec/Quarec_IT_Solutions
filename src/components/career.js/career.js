@@ -93,12 +93,12 @@ export default function Career() {
           </div>
           <div className="career-flex-wrapper-section">
             <div className="d-flex justify-content-between gapcareer">
-              <div className="career-image-wrapper width50">
+              <div className="career-image-wrapper width50 oneo-oneo">
                 <div className="career-image">
                   <img src="assets/images/career.png" />
                 </div>
               </div>
-              <div className="career-together-wrapper width50">
+              <div className="career-together-wrapper width50 oneo-oneo">
                 <div className="career-together-title">
                   <div className="career-sub-title">
                     <h1>A Career Together</h1>
@@ -132,8 +132,8 @@ export default function Career() {
         <div className="container">
           <div className="question-and-informaion-wrapper">
             <div className="d-flex justify-content-between gapinforamtion">
-              <div className="developer-information-form width50 ">
-                <div className="job-opening-wrapper">
+              <div className="developer-information-form width50 wecanadjust ">
+                <div className="job-opening-wrapper lets-suupp">
                   <div className="job-opening">
                     <h1>Send Your Resume</h1>
                   </div>
@@ -199,8 +199,8 @@ export default function Career() {
                   </form>
                 </div>
               </div>
-              <div className="faq-section-wrapper width50">
-                <div className="job-opening-wrapper">
+              <div className="faq-section-wrapper width50 wecanadjust">
+                <div className="job-opening-wrapper lets-suupp">
                   <div className="job-opening">
                     <h1>Current Openings</h1>
                   </div>

@@ -226,26 +226,26 @@ export default function App_dev() {
                         <div className="col-xs-12">
                             <div className="tab-react-Development">
                                 <ul className="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                                    <li> <a className="nav-item nav-link active react-tabs" role="tab" aria-selected="true" href="#1" data-toggle="tab">
-                                        Libraries<span><i className="fa fa-caret-right" aria-hidden="true"></i></span>
+                                    <li className='other-type-li'> <a className="nav-item nav-link active react-tabs" role="tab" aria-selected="true" href="#1" data-toggle="tab">
+                                        Libraries<span className='padding-lft'><i className="fa fa-caret-right" aria-hidden="true"></i></span>
                                     </a></li>
-                                    <li><a className="nav-item nav-link react-tabs " href="#2" role="tab" aria-selected="false" data-toggle="tab">
-                                        APIs<span><i className="fa fa-caret-right" aria-hidden="true"></i></span>
+                                    <li className='other-type-li'><a className="nav-item nav-link react-tabs " href="#2" role="tab" aria-selected="false" data-toggle="tab">
+                                        APIs<span className='padding-lft'><i className="fa fa-caret-right" aria-hidden="true"></i></span>
                                     </a></li>
-                                    <li><a className="nav-item nav-link react-tabs" href="#3" role="tab" aria-selected="false" data-toggle="tab">
-                                        Platforms<span><i className="fa fa-caret-right" aria-hidden="true"></i></span>
+                                    <li className='other-type-li'><a className="nav-item nav-link react-tabs" href="#3" role="tab" aria-selected="false" data-toggle="tab">
+                                        Platforms<span className='padding-lft'><i className="fa fa-caret-right" aria-hidden="true"></i></span>
                                     </a></li>
-                                    <li><a className="nav-item nav-link react-tabs" href="#4" role="tab" aria-selected="false" data-toggle="tab">
-                                        UI Framework<span><i className="fa fa-caret-right" aria-hidden="true"></i></span>
+                                    <li className='other-type-li'><a className="nav-item nav-link react-tabs" href="#4" role="tab" aria-selected="false" data-toggle="tab">
+                                        UI Framework<span className='padding-lft'><i className="fa fa-caret-right" aria-hidden="true"></i></span>
                                     </a></li>
-                                    <li><a className="nav-item nav-link react-tabs" href="#5" role="tab" aria-selected="false" data-toggle="tab">
-                                        Database<span><i className="fa fa-caret-right" aria-hidden="true"></i></span>
+                                    <li className='other-type-li'><a className="nav-item nav-link react-tabs" href="#5" role="tab" aria-selected="false" data-toggle="tab">
+                                        Database<span className='padding-lft'><i className="fa fa-caret-right" aria-hidden="true"></i></span>
                                     </a></li>
-                                    <li><a className="nav-item nav-link react-tabs" href="#6" role="tab" aria-selected="false" data-toggle="tab">
-                                        Tools<span><i className="fa fa-caret-right" aria-hidden="true"></i></span>
+                                    <li className='other-type-li'><a className="nav-item nav-link react-tabs" href="#6" role="tab" aria-selected="false" data-toggle="tab">
+                                        Tools<span className='padding-lft'><i className="fa fa-caret-right" aria-hidden="true"></i></span>
                                     </a></li>
-                                    <li><a className="nav-item nav-link react-tabs" href="#7" role="tab" aria-selected="false" data-toggle="tab">
-                                        Other<span><i className="fa fa-caret-right" aria-hidden="true"></i></span>
+                                    <li className='other-type-li'><a className="nav-item nav-link react-tabs" href="#7" role="tab" aria-selected="false" data-toggle="tab">
+                                        Other<span className='padding-lft'><i className="fa fa-caret-right" aria-hidden="true"></i></span>
                                     </a></li>
                                 </ul>
                             </div>

@@ -190,9 +190,6 @@
         padding-right: 45px;
     }
 
-    .cta-title h1 {
-        font-size: 22px;
-    }
 
     .fortfolio-image {
         width: 100%;
@@ -750,7 +747,7 @@
     }
 
     .widthfooter {
-        width: 48%;
+        width: 47%;
     }
 
     ul.services-menus li a {
@@ -1102,7 +1099,7 @@
 
     .width50 {
         width: 100%;
-        text-align: initial;
+        text-align: center;
         padding-top: 30px;
     }
 
@@ -1887,7 +1884,7 @@
 
     .career-email p {
         margin: 0px;
-        display: flex; 
+        display: flex;
         align-items: center;
         margin: 0 auto;
         padding: 0px;
@@ -2162,9 +2159,6 @@
         padding-top: 12px;
     }
 
-    section.cta-section-wrapper {
-        display: none;
-    }
 
     .schedule-interview-from-wrapper {
         width: 100%;
@@ -2390,7 +2384,7 @@
     }
 
     span.button-in-touch.gwet-btn a {
-        width: 100% !important;
+        width: 100% 
     }
 
     a.nav-link.other-evry-li.active a:after {
@@ -2695,24 +2689,28 @@
         font-style: normal;
         font-weight: 600;
         font-size: 13px;
-        line-height: 26px;}
+        line-height: 26px;
+    }
 
-        .career-email span {
-            font-family: 'Raleway';
-            font-style: normal;
-            font-weight: 600;
-            font-size: 13px;
-            line-height: 25px;}
+    .career-email span {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 25px;
+    }
 
     .d-flex.justify-content-between.gapcareer {
-        display: block !important;}
+        display: block !important;
+    }
 
     .deparment-item.yellow span {
         font-family: 'Raleway';
         font-style: italic;
         font-weight: 700;
         font-size: 3.5vw;
-        line-height: 20px;}
+        line-height: 20px;
+    }
 
     .blog-inner-wrapper {
         width: 85%;
@@ -2744,9 +2742,10 @@
 }
 
 @media only screen and (max-width: 320px) {
-    .career-email a{
+    .career-email a {
         padding: 0;
     }
+
     .widthfooter {
         width: 90%;
     }
@@ -2755,39 +2754,83 @@
 
 @media only screen and (max-width: 500px) {
 
+    a.nav-item.nav-link.active.react-tabs {
+        color: #f69320;
+        border-bottom: 0px;
+    }
+
+    .padding-lft{
+        padding-left: 15px;
+    }
+
+    a.nav-link {
+        text-align: center;
+        width: 35% !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+.cta-title h1 {
+    font-size: 2.2vw;
+    line-height: 17px;
+}
+
+.cta-button button{
+    height: 100%;
+    font-size: 2vw;
+}
+
+.cta-Consultation p {
+    font-size: 2vw;
+    line-height: 3PX;
+}
+
+    .other-type-li{
+        width: 100% !important;
+    }
+
+    .wecanadjust {
+        text-align: initial;
+    }
+
     .job-opening h1 {
         font-family: 'Raleway';
         font-style: normal;
         font-weight: 700;
-        font-size: 7vw;}
+        font-size: 7vw;
+    }
 
-        .job-opening {
-             padding-bottom: 0px; 
-        }
+    .job-opening {
+        padding-bottom: 0px;
+    }
 
-        .faq-inner-wrapper a {
-            font-family: 'Raleway';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 10px;}
+    .faq-inner-wrapper a {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 10px;
+    }
 
-            .here-answer p {
-                font-family: 'Raleway';
-                font-style: normal;
-                font-weight: 500;
-                font-size: 14px;
-                line-height: 22px;}
+    .here-answer p {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 22px;
+    }
 
-                select.select-option {
-                    font-size: 13px;
-                    line-height: 19px;}
+    select.select-option {
+        font-size: 13px;
+        line-height: 19px;
+    }
 
-                    select.select-option option {
-                        font-family: 'Raleway';
-                        font-style: normal;
-                        font-weight: 500;
-                        font-size: 13px;
-                        line-height: 20px;}
+    select.select-option option {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 20px;
+    }
 
     .career-email span {
         font-family: 'Raleway';
@@ -2800,7 +2843,8 @@
     .save-information-button button {
         font-size: 14px;
         width: 112px;
-        height: 35px;}
+        height: 35px;
+    }
 
     .career-email a {
         padding-left: 3px;
@@ -2811,9 +2855,6 @@
         line-height: 17px;
     }
 
-    .plain-and-Process-wrapper {
-        padding: 32px 0 32px 45px;
-    }
 
     .call-inormation {
         width: 49%;
@@ -2838,19 +2879,40 @@
 
 @media only screen and (max-width: 770px)and (min-width: 500px) {
 
+    .cta-button button {
+        font-size: 12px;}
+
+    .cta-Consultation p {
+        font-size: 2vw;
+        line-height: 13PX;
+    }
+
+    .cta-title h1 {
+        font-size: 2.2vw;
+        line-height: 17px;}
+
+    .other-type-li{
+        width: 30% !important;
+    }
+    
+
+    .wecanadjust {
+        width: 100%;
+    }
+
+    .oneo-oneo {
+        padding-top: 60px;
+        width: 100%;
+    }
+
     .d-flex.justify-content-between.gapinforamtion {
         display: block !important;
     }
 
 
-.width50 {
-    width: 90%;
-}
-
-.schedule-interview-from-wrapper {
-    width: 100%
-   
-}
+    .schedule-interview-from-wrapper {
+        width: 100%
+    }
 
     a.nav-item.movetabs.active {
         padding: 14px 0;
@@ -2904,10 +2966,6 @@
         line-height: 7px;
     }
 
-    .about-company-content p {
-        font-size: 10px;
-        line-height: 15px;
-    }
 }
 
 @media only screen and (max-width: 1200px) and (min-width:770px) {
@@ -2975,8 +3033,22 @@
 
 @media only screen and (min-width:770px) and (max-width:991px) {
 
+    a.nav-link {
+        text-align: center;
+        width: 35% !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cta-button button {
+        font-size: 13px;}
+
+    .wecanadjust {
+        width: 100%;
+    }
+
     section.customer-centric-wrapper-section {
-     padding-bottom: 0px
+        padding-bottom: 0px
     }
 
     .hire-redux-dreveloper-wrapper-bothpading {
@@ -2996,21 +3068,24 @@
         font-style: normal;
         font-weight: 700;
         font-size: 19px;
-        line-height: 24px;}
+        line-height: 24px;
+    }
 
     .hire-redux-title h1 {
         font-family: 'Raleway';
         font-style: normal;
         font-weight: 700;
         font-size: 18px;
-        line-height: 30px;}
+        line-height: 30px;
+    }
 
     .hire-redux-discription p {
         font-family: 'Raleway';
         font-style: normal;
         font-weight: 500;
         font-size: 12px;
-        line-height: 18px;}
+        line-height: 18px;
+    }
 
     .web-development-inner-wrapper {
         width: 100%;
@@ -3025,78 +3100,80 @@
     }
 
 
-.width50 {
-    width: 90%;
-}
-
-.schedule-interview-from-wrapper {
-    width: 100%
-   
-}
+    .schedule-interview-from-wrapper {
+        width: 100%
+    }
 
     .career-sub-title h1 {
         font-family: 'Raleway';
         font-style: normal;
         font-weight: 700;
         font-size: 20px;
-        line-height: 38px;}
+        line-height: 38px;
+    }
 
-        .career-small p {
-            font-family: 'Raleway';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 15px;
-            line-height: 10px;}
+    .career-small p {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 10px;
+    }
 
-            .career-small {
-                padding-bottom: 11px;
-            }
+    .career-small {
+        padding-bottom: 11px;
+    }
 
-            .career-explain p {
-                font-family: 'Raleway';
-                font-style: normal;
-                font-weight: 500;
-                font-size: 10px;
-                line-height: 14px;}
+    .career-explain p {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 14px;
+    }
 
-                .career-explain {
-                    padding-bottom: 10px;
-                }
+    .career-explain {
+        padding-bottom: 10px;
+    }
 
-                .career-email a {
-                    font-family: 'Raleway';
-                    font-style: normal;
-                    font-weight: 600;
-                    font-size: 11px;
-                    line-height: 8px;}
+    .career-email a {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 11px;
+        line-height: 8px;
+    }
 
-                    .career-email p {
-                        border: 2px solid #F69320;
-                        border-radius: 0px 6px 6px 0px;
-                        /* height: 46px; */
-                        width: 85%;
-                        margin: 0px;
-                        /* display: flex; */
-                        align-items: center;
-                        padding: 1px 0px;
-                    }
+    .career-email p {
+        border: 2px solid #F69320;
+        border-radius: 0px 6px 6px 0px;
+        /* height: 46px; */
+        width: 85%;
+        margin: 0px;
+        /* display: flex; */
+        align-items: center;
+        padding: 1px 0px;
+    }
 
-                    .career-email span {
-                        font-family: 'Raleway';
-                        font-style: normal;
-                        font-weight: 600;
-                        font-size: 8px;
-                        line-height: 29px;}
+    .career-email span {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 8px;
+        line-height: 29px;
+    }
 
-                        .career-email span {
-                            padding: 11px 8px;}
+    .career-email span {
+        padding: 11px 8px;
+    }
 
     .deparment-item.yellow span {
         font-family: 'Raleway';
         font-style: italic;
         font-weight: 700;
         font-size: 3.5vw;
-        line-height: 20px;}
+        line-height: 20px;
+    }
 
     .information p {
         line-height: 16px;
@@ -3182,7 +3259,8 @@
         font-weight: 700;
         font-size: 3.5vw;
         line-height: 25px;
-        text-align: center}
+        text-align: center
+    }
 
     .career-sub-title h1 {
         font-family: 'Raleway';
