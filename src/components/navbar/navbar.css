@@ -1,0 +1,87 @@
+.parent {
+    color: black !important;
+ 
+}
+
+.navbar-brand {
+    color: black !important;
+}
+
+.resposne-head {
+    flex-direction: row-reverse !important;
+    padding-right: 25px !important;
+}
+
+.other-evry-li {
+    padding-left: 17px !important;
+    padding-right: 17px !important;
+    font-family: 'Inter' !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 18px !important;
+    line-height: 22px !important;
+    /* identical to box height */
+
+    text-align: center !important;
+
+    color: #055393 !important;
+
+}
+
+a.nav-link :hover {
+    color: #F69320 !important;
+}
+
+.button-icon {
+    opacity: 90% !important;
+    padding: 0 !important;
+}
+
+li.nav-item.navother:hover a {
+    transition: 1s;
+    color: #f69320 !important;
+    margin-top: -10px;
+}
+li.nav-item.navother:hover .orange-parent {
+    opacity: 1;
+    transition: 1s;
+}
+a.nav-link.other-evry-li.active, .orange-dot {
+    margin-top: -10px;
+    color: #f69320 !important;
+    opacity: 1 !important;
+}
+
+
+ul.navbar-nav {
+    position: relative !important;
+}
+.nav-item:hover li.nav-item:after{display: block;}
+
+.orange-dot{
+    color: #F69320;
+     margin-top: auto !important;
+   margin-right: auto !important;
+   font-size: 10px !important;
+    
+}
+
+.orange-parent{
+  text-align: center;
+  opacity: 0;
+
+   
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    width: 100%;}
+
+
+
+
+
+  .navbar-brand {
+    margin-right: 0;
+    margin-left: 0px;
+    padding-left: 16px;
+  }

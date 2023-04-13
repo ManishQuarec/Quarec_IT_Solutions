@@ -1,0 +1,53 @@
+.image-animation-div{
+    text-align: center;
+           background-image: url("./images/Component 78.png");
+           background-position: center;
+           background-repeat: no-repeat;
+           background-size: 100%;
+           animation: shrink 5s ease infinite alternate;
+}
+
+@keyframes shrink {
+    0% {
+      background-size: 80% auto;
+    }
+   
+    100% {
+        background-size: 100% auto;
+      }
+  }
+
+  .big-girl{
+    width: 75%;
+    border-bottom-right-radius: 45%;
+    border-bottom-left-radius: 40%;
+  }
+
+  .postion-realative{
+    position: relative;
+  }
+
+  .team-social-wrapper{
+    position: absolute;
+  }
+
+  .harkuch-karo{
+    position: relative;
+  }
+
+  .team-one-icon {
+    width: 100%;
+}
+
+ul.media-links li {
+    padding-bottom: 15px;
+  }
+  @media only screen and (max-width: 770px) {
+  ul.media-links li {
+    padding-bottom: 10px;
+    height: 15%;
+  }
+
+  
+}
+  

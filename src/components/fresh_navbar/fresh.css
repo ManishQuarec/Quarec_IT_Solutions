@@ -1,0 +1,130 @@
+.ui-section li a {
+    text-decoration: none;
+    color: #055393
+
+}
+ul.ui-section li {
+    margin-top: 0px ;
+}
+nav.a :hover {
+    color: brown;
+}
+
+
+.li-parent {
+    padding-top: 10px;
+}
+
+header .nav-btn {
+    padding: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+  display: none;
+    opacity: 0;
+}
+
+.li-parent:hover {
+    margin-top: -5px;
+    transition: 0.5s;
+}
+
+
+ul.ui-section {
+    /* text-align: center;
+    justify-items: center;
+    justify-content: center; */
+    display: flex;
+    list-style: none;
+    margin: 10px;
+    padding: 0px;
+}
+ul.ui-section li {
+    display: inline-block;
+    padding: 0px 17px;
+}
+ul.ui-section li   {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+   
+
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #055393;
+}
+
+.link-nav:hover{
+    color:#F69320 ;
+}
+.header-logo-wrapper img {
+    width: 100%;
+}
+.header-logo-wrapper {
+    width: 160px;
+}
+.d-flex.justify-content-between.align-items-center.header-inner-wrapper {
+    padding: 15px 0px;
+}
+
+@media only screen and (max-width: 1024px) {
+
+    ul.ui-section{
+        display: block;
+    }
+
+
+    header .nav-btn {
+        display: block;
+        opacity: 1;
+    }
+
+    ul.ui-section li {
+        display: block;
+    }
+
+    .responsiveheader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        transition: 1s;
+        transform: translateY(-100vh);
+    }
+
+    header .responsive_nav {
+        transform: none;
+    }
+
+    nav .nav-close-btn,
+    .nav-btn {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+    }
+    ul.ui-section {
+        position: absolute;
+        top: 100px;
+        width: 100%;
+        left: 0;
+        right: 0;
+    }   
+    ul.ui-section li {
+        padding: 11px 0px;
+    }
+ 
+span.button-in-touch.gwet-btn a {
+
+    margin: 0 auto;
+} 
+}

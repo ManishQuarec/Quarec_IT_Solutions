@@ -1,0 +1,174 @@
+.relativeeeee {
+    position: relative;
+    display: flex;
+}
+
+.team-one-icon {
+    width: 100%;
+}
+
+ul.media-links li {
+    padding-bottom: 15px;
+  }
+
+.arrow-one {
+    position: absolute;
+    left: 35px;
+    animation-name: my-animation;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+
+}
+
+@keyframes my-animation {
+    from {
+
+        top: -25px;
+    }
+
+    to {
+
+        top: -3px;
+        left: 14px
+    }
+}
+
+.telescope-rel{
+    position: relative;
+    display: flex;
+}
+
+
+.stand{
+position: absolute;
+
+animation-name:  my-anoher-animation;
+animation-duration: 2s;
+animation-direction: alternate;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+
+
+}
+
+@keyframes my-anoher-animation {
+from {
+rotate: 30deg;
+
+}
+to {
+
+rotate: 0deg;
+}
+}
+
+
+
+
+
+img.telescope{
+padding: 15px 0 0 0;
+}
+
+.telescope-rel {
+    position: relative;
+    display: flex;
+}
+
+
+.stand-weight {
+    position: absolute;
+
+    animation-name: mation;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+
+}
+
+@keyframes mation {
+    from {
+        rotate: 0deg;
+
+    }
+
+    to {
+
+        rotate: -15deg;
+    }
+}
+
+img.weight-one {
+    padding: 6px 0px 0px 19px;
+}
+
+.width-increase {
+    width: 87px;
+}
+
+@media only screen and (max-width: 770px){
+@keyframes my-animation {
+    from {
+
+        top: -09px;
+    }
+
+    to {
+
+        top: -1px;
+        left: 19px
+    }
+}
+
+img.weight-one {
+    height: 50px;
+    padding-left: 10px;
+
+}
+
+img.stand-weight {
+    width: 52px;
+}
+}
+
+@media only screen and (max-width: 500px){
+
+    .arrow-one {
+        left: 26px;
+    }
+
+    .black-img.teleone {
+        padding-left: 0;
+      }
+
+    img.weight-one {
+        height: 50px;
+        padding-left: 08px;
+    }
+    @keyframes my-animation {
+        from {
+    
+            top: -09px;
+        }
+    
+        to {
+    
+            top: -1px;
+            left: 12px
+        }
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    ul.media-links li {
+      padding-bottom: 10px;
+      height: 15%;
+    }
+  
+    
+  }
