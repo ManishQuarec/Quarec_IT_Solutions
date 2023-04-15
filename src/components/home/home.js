@@ -2,10 +2,17 @@ import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Image_imagination from '../additional-pages/image_imagination';
 import { Helmet } from "react-helmet";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Slider from "react-slick";
 import "./home.css"
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react'
 export default function Home() {
+
+    useEffect(() => {
+		window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+	}, []);
 
     const navigate = useNavigate()
 
@@ -55,30 +62,41 @@ export default function Home() {
 
     let handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-            let res = await fetch("https://be33-43-249-54-66.in.ngrok.io/api/addcontact", {
-                method: "POST",
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    name: txt,
-                    email: email,
-                    phone: phone,
-                    message: message
-                }),
-            });
-            let resJson = await res.json();
+        // try {
+        //     let res = await fetch("https://be33-43-249-54-66.in.ngrok.io/api/addcontact", {
+        //         method: "POST",
+        //         headers: { 'Content-Type': 'application/json' },
+        //         body: JSON.stringify({
+        //             name: txt,
+        //             email: email,
+        //             phone: phone,
+        //             message: message
+        //         }),
+        //     });
+        //     let resJson = await res.json();
 
-            console.log(resJson)
-            if (res.status === 200) {
-                setTxt("");
-                setemail("");
-                console.log("user created successfully")
-            } else {
-                console.log("Some error occured");
-            }
-        } catch (err) {
-            console.log(err);
-        }
+        //     console.log(resJson)
+        //     if (res.status === 200) {
+        //         setTxt("");
+        //         setemail("");
+        //         console.log("user created successfully")
+        //     } else {
+        //         console.log("Some error occured");
+        //     }
+        // } catch (err) {
+        //     console.log(err);
+        // }
+
+        toast.success('Information Saved Successfully', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
     };
 
     const [txt, setTxt] = useState('');
@@ -95,9 +113,21 @@ export default function Home() {
 
     return (
         <div>
+            <ToastContainer
+				position="top-right"
+				autoClose={5000}
+				hideProgressBar={false}
+				newestOnTop={false}
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+				theme="light"
+			/>
 
             <section className="silder-section-wrappre">
-                <div className="container">
+                <div className="contain-upper">
                     <div className="d-flex justify-content-between align-items-center gap">
                         <div className="first-section width50">
                             <div className="we-section-content">
@@ -117,7 +147,7 @@ export default function Home() {
 
             {/* <!-- ABOUT US SECTION START --> */}
             <section className="about-section-wrapper photo-lower">
-                <div className="container">
+                <div className="contain-slidder-lower">
                     <div className="d-flex justify-content-between gap31">
                         <div className="image-silder-wrapper width50">
                             <Slider {...settings}>
@@ -148,9 +178,9 @@ export default function Home() {
                                     using Lorem Ipsum is that it has a more-or-less normal distribution
                                     of letters, as opposed</p>
                             </div>
-                            <div className="d-flex inner-flex-wrapper">
+                            <div className="d-flex inner-flex-wrapper contact-to-other">
                                 <div className="content-imge-wrapper">
-                                    <div className="content-img"><img src="assets/images/sidecontentimg.png" /></div>
+                                    <div className="content-img"><img src="assets/images/Black.svg"/></div>
                                 </div>
                                 <div className="content-wrapper">
                                     <div className="professional-advice"><h1>Get Instant Professional Advice</h1></div>
@@ -168,7 +198,7 @@ export default function Home() {
 
 <!--  OUR Process SECTION START --> */}
             <section className="plaining-section-wrapper">
-                <div className="container">
+                <div className="contain-4small-one">
                     <div className="plainong-heading-wrapper">
                         <div className="plaining-heaing"><h3>Planning </h3></div>
                         <div className="Process-heading"><h1>Our Process</h1></div>
@@ -177,7 +207,7 @@ export default function Home() {
                         <div className="plain-and-Process-wrapper width25">
                             <div className="d-flex justify-content-between">
                                 <div className="black-img-wrappere">
-                                    <div className="black-img"><img src="assets/images/black.png" alt="not found" /></div>
+                                    <div className="black-img"><img src="assets/images/Black-4.svg" alt="not found" /></div>
                                 </div>
                                 <div className="sideimage-wrapper">
                                     <div className="sideimg"><img src="assets/images/one.png" alt="not found" /></div>
@@ -189,7 +219,7 @@ export default function Home() {
                         <div className="plain-and-Process-wrapper width25">
                             <div className="d-flex justify-content-between">
                                 <div className="black-img-wrappere">
-                                    <div className="black-img"><img src="assets/images/pencil.png" alt="not found" /></div>
+                                    <div className="black-img"><img src="assets/images/Black-11.svg" alt="not found" /></div>
                                 </div>
                                 <div className="sideimage-wrapper">
                                     <div className="sideimg"><img src="assets/images/two.png" alt="not found" /></div>
@@ -201,7 +231,7 @@ export default function Home() {
                         <div className="plain-and-Process-wrapper width25">
                             <div className="d-flex justify-content-between">
                                 <div className="black-img-wrappere">
-                                    <div className="black-img"><img src="assets/images/bookpencil.png" alt="not found" /></div>
+                                    <div className="black-img"><img src="assets/images/Black-3.svg" alt="not found" /></div>
                                 </div>
                                 <div className="sideimage-wrapper">
                                     <div className="sideimg"><img src="assets/images/three.png" alt="not found" /></div>
@@ -213,7 +243,7 @@ export default function Home() {
                         <div className="plain-and-Process-wrapper width25">
                             <div className="d-flex justify-content-between">
                                 <div className="black-img-wrappere">
-                                    <div className="black-img"><img src="assets/images/bookpencil.png" alt="not found" /></div>
+                                    <div className="black-img"><img src="assets/images/Black-2.svg" alt="not found" /></div>
                                 </div>
                                 <div className="sideimage-wrapper">
                                     <div className="sideimg"><img src="assets/images/four.png" alt="not found" /></div>
@@ -229,7 +259,7 @@ export default function Home() {
 
 <!-- OUR WORK SECTION START --> */}
             <section className="about-section-wrapper">
-                <div className="container">
+                <div className="contain-other-similar">
                     <div className="d-flex justify-content-between gap31">
                         <div className="image-silder-wrapper width50">
                             <Slider {...settings}>
@@ -264,7 +294,7 @@ export default function Home() {
                             <div className="wrapper-vision d-flex justify-content-between">
                                 <div className="inner-wrapper d-flex">
                                     <div className="wrapper-vision">
-                                        <div className="vision-image"><img src="assets/images/vision.png" /></div>
+                                        <div className="vision-image"><img src="assets/images/Black-1.svg" /></div>
                                     </div>
                                     <div className="vision-content-wrapper">
                                         <div className="our-vision"><h1>Our Vision</h1></div>
@@ -273,7 +303,7 @@ export default function Home() {
                                 </div>
                                 <div className="inner-wrapper d-flex">
                                     <div className="wrapper-vision">
-                                        <div className="vision-image"><img src="assets/images/vision.png" /></div>
+                                        <div className="vision-image"><img src="assets/images/Black-12.svg" /></div>
                                     </div>
                                     <div className="vision-content-wrapper">
                                         <div className="our-vision"><h1>Our Goal</h1></div>
@@ -297,7 +327,7 @@ export default function Home() {
 
             {/* <!-- SERVICES SECTION START  --> */}
             <section className="plaining-section-wrapper">
-                <div className="container">
+                <div className="any-con-inert">
                     <div className="plainong-heading-wrapper">
                         <div className="plaining-heaing"><h3>Services </h3></div>
                         <div className="Process-heading"><h1>Our Expertice</h1></div>
@@ -306,7 +336,7 @@ export default function Home() {
                         <div className="plain-and-Process-wrapper width33.33">
                             <div className="d-flex justify-content-between">
                                 <div className="black-img-wrappere">
-                                    <div className="black-img"><img src="assets/images/webdesign.png" alt="not found" /></div>
+                                    <div className="black-img"><img src="assets/images/Black-5.svg" alt="not found" /></div>
                                 </div>
 
                             </div>
@@ -316,7 +346,7 @@ export default function Home() {
                         <div className="plain-and-Process-wrapper width33.33">
                             <div className="d-flex justify-content-between">
                                 <div className="black-img-wrappere">
-                                    <div className="black-img"><img src="assets/images/uidesign.png" alt="not found" /></div>
+                                    <div className="black-img"><img src="assets/images/Black-6.svg" alt="not found" /></div>
                                 </div>
 
                             </div>
@@ -326,7 +356,7 @@ export default function Home() {
                         <div className="plain-and-Process-wrapper width33.33">
                             <div className="d-flex justify-content-between">
                                 <div className="black-img-wrappere">
-                                    <div className="black-img"><img src="assets/images/website.png" alt="not found" /></div>
+                                    <div className="black-img"><img src="assets/images/Black-7.svg" alt="not found" /></div>
                                 </div>
 
                             </div>
@@ -336,7 +366,7 @@ export default function Home() {
                         <div className="plain-and-Process-wrapper width33.33">
                             <div className="d-flex justify-content-between">
                                 <div className="black-img-wrappere">
-                                    <div className="black-img"><img src="assets/images/appdevelopment.png" alt="not found" /></div>
+                                    <div className="black-img"><img src="assets/images/Black-8.svg" alt="not found" /></div>
                                 </div>
 
                             </div>
@@ -346,7 +376,7 @@ export default function Home() {
                         <div className="plain-and-Process-wrapper width33.33">
                             <div className="d-flex justify-content-between">
                                 <div className="black-img-wrappere">
-                                    <div className="black-img"><img src="assets/images/hubspot.png" alt="not found" /></div>
+                                    <div className="black-img"><img src="assets/images/Black-9.svg" alt="not found" /></div>
                                 </div>
 
                             </div>
@@ -356,7 +386,7 @@ export default function Home() {
                         <div className="plain-and-Process-wrapper width33.33">
                             <div className="d-flex justify-content-between">
                                 <div className="black-img-wrappere">
-                                    <div className="black-img"><img src="assets/images/mailmarketing.png" alt="not found" /></div>
+                                    <div className="black-img"><img src="assets/images/Black-10.svg" alt="not found" /></div>
                                 </div>
 
                             </div>
@@ -375,8 +405,8 @@ export default function Home() {
             {/* // <!-- SERVICES SECTION END -->
 
 // <!-- our team section start  --> */}
-            <section className="our-team-section-wrapper">
-                <div className="container paddingleftright">
+            {/* <section className="our-team-section-wrapper">
+                <div className="contani-may-very paddingleftright">
                     <div className="main-heading-wrapper-team">
                         <div className="our-team-main-heading"><h3>team</h3></div>
                         <div className="title-our-heading"><h1>Our Leaders</h1></div>
@@ -385,9 +415,9 @@ export default function Home() {
                         <div className="inner-wrapper-our-team width">
 
                             <div className='harkuch-karo'>
-                                <div className="team-image"><img src="assets/images/team1.png" /></div>
+                                <div className="team-image"><img src="assets/images/team1.png" /></div> */}
                                 {/* <!-- on hover effect start  --> */}
-                                <div className="team-social-wrapper">
+                                {/* <div className="team-social-wrapper">
                                     <div className="social-meaida">
                                         <ul className="media-links">
                                             <li><a href="#"><img className='team-one-icon' src="assets/images/facebook.png" /></a></li>
@@ -396,9 +426,9 @@ export default function Home() {
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                             {/* <!-- on hover-effect end --> */}
-                            <div className="team-details-wrapper">
+                            {/* <div className="team-details-wrapper">
                                 <div className="team-name"><h2>Larry F. Burnett</h2></div>
                                 <div className="postion-team"><h3>CEO</h3></div>
                             </div>
@@ -407,9 +437,9 @@ export default function Home() {
                         <div className="inner-wrapper-our-team width">
 
                             <div className='harkuch-karo'>
-                                <div className="team-image"><img src="assets/images/team1.png" /></div>
+                                <div className="team-image"><img src="assets/images/team1.png" /></div> */}
                                 {/* <!-- on hover effect start  --> */}
-                                <div className="team-social-wrapper">
+                                {/* <div className="team-social-wrapper">
                                     <div className="social-meaida">
                                         <ul className="media-links">
                                             <li><a href="#"><img className='team-one-icon' src="assets/images/facebook.png" /></a></li>
@@ -418,9 +448,9 @@ export default function Home() {
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                             {/* <!-- on hover-effect end --> */}
-                            <div className="team-details-wrapper">
+                            {/* <div className="team-details-wrapper">
                                 <div className="team-name"><h2>Larry F. Burnett</h2></div>
                                 <div className="postion-team"><h3>CEO</h3></div>
                             </div>
@@ -429,9 +459,9 @@ export default function Home() {
                         <div className="inner-wrapper-our-team width">
 
                             <div className='harkuch-karo'>
-                                <div className="team-image"><img src="assets/images/team1.png" /></div>
+                                <div className="team-image"><img src="assets/images/team1.png" /></div> */}
                                 {/* <!-- on hover effect start  --> */}
-                                <div className="team-social-wrapper">
+                                {/* <div className="team-social-wrapper">
                                     <div className="social-meaida">
                                         <ul className="media-links">
                                             <li><a href="#"><img  className='team-one-icon' src="assets/images/facebook.png" /></a></li>
@@ -440,9 +470,9 @@ export default function Home() {
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                             {/* <!-- on hover-effect end --> */}
-                            <div className="team-details-wrapper">
+                            {/* <div className="team-details-wrapper">
                                 <div className="team-name"><h2>Larry F. Burnett</h2></div>
                                 <div className="postion-team"><h3>CEO</h3></div>
                             </div>
@@ -451,9 +481,9 @@ export default function Home() {
                         <div className="inner-wrapper-our-team width">
 
                             <div className='harkuch-karo'>
-                                <div className="team-image"><img src="assets/images/team1.png" /></div>
+                                <div className="team-image"><img src="assets/images/team1.png" /></div> */}
                                 {/* <!-- on hover effect start  --> */}
-                                <div className="team-social-wrapper">
+                                {/* <div className="team-social-wrapper">
                                     <div className="social-meaida">
                                         <ul className="media-links">
                                             <li><a href="#"><img  className='team-one-icon' src="assets/images/facebook.png" /></a></li>
@@ -462,23 +492,23 @@ export default function Home() {
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                             {/* <!-- on hover-effect end --> */}
-                            <div className="team-details-wrapper">
+                            {/* <div className="team-details-wrapper">
                                 <div className="team-name"><h2>Larry F. Burnett</h2></div>
                                 <div className="postion-team"><h3>CEO</h3></div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
 
             {/* // <!-- our team section end  -->
 
 // <!-- Testimonials section START  --> */}
             <section className="Testimonials-section-wrapper">
-                <div className="container">
+                <div className="conteeey">
                     <div className="main-heading-wrapper-team">
                         <div className="our-team-main-heading"><h3>From our Customers</h3></div>
                         <div className="title-our-heading"><h1 className="color">Testimonials</h1></div>
@@ -513,18 +543,18 @@ export default function Home() {
                             </div>
                         </Slider>
 
-
-                    </div>
-                    <div className="loader">
+                        <div className="loader">
                         <div className="loader__element"></div>
                     </div>
+                    </div>
+                    
                 </div>
             </section>
             {/* // <!-- Testimonials section end  -->
 
 // <!-- Get In Touch section start --> */}
             <section className="conatct-us-section-wrapper">
-                <div className="container">
+                <div className="conk">
                     <div className="conact-contnet-wrappere">
                         <div className="gat-in-touch"><h3>Get In Touch</h3></div>
                         <div className="content-for-help"><h1>Hey! Let’s Talk</h1></div>
@@ -555,7 +585,8 @@ export default function Home() {
                             <div className="inner-wrapper-information">
                                 <div className="d-flex align-items-center content-wrapper">
                                     <div className="call-image-wrapper">
-                                        <div className="call-image"><img src="assets/images/ring.png" />
+                                        <div className="call-image">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path fill="#f69320" d="M20 10.999h2C22 5.869 18.127 2 12.99 2v2C17.052 4 20 6.943 20 10.999z"/><path fill="#f69320" d="M13 8c2.103 0 3 .897 3 3h2c0-3.225-1.775-5-5-5v2zm3.422 5.443a1.001 1.001 0 0 0-1.391.043l-2.393 2.461c-.576-.11-1.734-.471-2.926-1.66c-1.192-1.193-1.553-2.354-1.66-2.926l2.459-2.394a1 1 0 0 0 .043-1.391L6.859 3.513a1 1 0 0 0-1.391-.087l-2.17 1.861a1 1 0 0 0-.29.649c-.015.25-.301 6.172 4.291 10.766C11.305 20.707 16.323 21 17.705 21c.202 0 .326-.006.359-.008a.992.992 0 0 0 .648-.291l1.86-2.171a1 1 0 0 0-.086-1.391l-4.064-3.696z"/></svg>
                                         </div>
                                     </div>
                                     <div className="call-inormation">
@@ -566,7 +597,9 @@ export default function Home() {
                                 </div>
                                 <div className="d-flex align-items-center content-wrapper">
                                     <div className="call-image-wrapper">
-                                        <div className="call-image"><img src="assets/images/mail.png" /></div>
+                                        <div className="call-image">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M0 0h24v24H0z"/><path fill="#f69320" d="M22 7.535V17a3 3 0 0 1-2.824 2.995L19 20H5a3 3 0 0 1-2.995-2.824L2 17V7.535l9.445 6.297l.116.066a1 1 0 0 0 .878 0l.116-.066L22 7.535z"/><path fill="#f69320" d="M19 4c1.08 0 2.027.57 2.555 1.427L12 11.797l-9.555-6.37a2.999 2.999 0 0 1 2.354-1.42L5 4h14z"/></g></svg>
+                                        </div>
                                     </div>
                                     <div className="call-inormation">
                                         <div className="call-anytime"><h2>Send Email</h2></div>
@@ -577,7 +610,7 @@ export default function Home() {
                                 <div className="d-flex align-items-center content-wrapper">
                                     <div className="call-image-wrapper">
 
-                                        <div className="call-image"><img src="assets/images/GoogleMap.png" /></div>
+                                        <div className="call-image"><img src="assets/images/gmap.svg" /></div>
                                     </div>
                                     <div className="call-inormation">
                                         <div className="call-anytime"><h2>Visit Us</h2></div>
@@ -602,7 +635,7 @@ export default function Home() {
             {/* // <!-- Get In Touch section end -->
         // <!-- BLOG SECTION START  --> */}
             <section className="blog-section-wrapper">
-                <div className="container paddingleftright">
+                <div className="contaiyy-photos paddingleftright">
                     <div className="blog-title-wrapper">
                         <div className="blog-main-headinf"><h3>our blog</h3></div>
                         <div className="blog-sub-heading"><h1>Latest Post</h1></div>

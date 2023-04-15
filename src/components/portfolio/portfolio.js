@@ -3,6 +3,10 @@ import { useNavigate, } from 'react-router-dom'
 
 export default function Portfolio () {
 
+	useEffect(() => {
+		window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+	}, []);
+
 	const navigate =useNavigate()
 	
 	
@@ -18,7 +22,7 @@ export default function Portfolio () {
 </section>
 {/* <!-- Portfolio section start --> */}
 <section className="Portfolio-section-wrapper">
-	<div className="container paddingleftright">
+	<div className="cont-portfol paddingleftright">
 		<div className="Portfolio-title-wrapper">
 			<div className="Portfolio-main-title">
 				<h3>Portfolio</h3>
@@ -31,16 +35,16 @@ export default function Portfolio () {
 				<div className="inner-portfolio-tabs-wrapper">
       <div className="tabs-wrapper">
         <ul className="nav nav-tabs align-items-center  " id="nav-tab" role="tablist">
-          <li className="border-radius"><a className="nav-item movetabs active " role="tab" aria-selected="true" href="#1" data-toggle="tab">
+          <li className="border-radius all-different"><a className="nav-item movetabs active " role="tab" aria-selected="true" href="#1" data-toggle="tab">
             all
           </a></li>
-        <li>  <a className="nav-item movetabs" href="#2" role="tab" aria-selected="false" data-toggle="tab">
+        <li className='all-one-sib'>  <a className="nav-item movetabs" href="#2" role="tab" aria-selected="false" data-toggle="tab">
            Web Development
           </a></li>
-         <li> <a className="nav-item movetabs " href="#3" role="tab" aria-selected="false" data-toggle="tab">
+         <li className='all-two-sib'> <a className="nav-item movetabs " href="#3" role="tab" aria-selected="false" data-toggle="tab">
             App Development
           </a></li>
-		  <li> <a className="nav-item movetabs " href="#4" role="tab" aria-selected="false" data-toggle="tab">
+		  <li className='all-one-round'> <a className="nav-item movetabs " href="#4" role="tab" aria-selected="false" data-toggle="tab">
             UI-UX Design
           </a></li>
 		  <li> <a className="nav-item movetabs " href="#5" role="tab" aria-selected="false" data-toggle="tab">

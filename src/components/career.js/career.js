@@ -1,79 +1,139 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Career() {
 
+  useEffect(() => {
+		window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+	}, []);
 
-  const [name, setname] = useState("")
   const [email, setemail] = useState("")
   const [phone, setphone] = useState("")
   const [file, setfile] = useState()
   const [message, setmessage] = useState("")
+  const [txt, setTxt] = useState('');
+  const[option,setoption]=useState("")
 
-  const [user, setUser] = useState({});
+  const handleemail = (e) => { setemail(e.target.value) }
+	const handlephone = (e) => {
+		
+		const value=e.target.value
 
-  const fetchData = () => {
-    return fetch("https://0fd7-43-249-54-66.in.ngrok.io/api/getcategory",
-      { 
-      method: 'Get',
-      headers: {
-      Accept: 'application/json'
-    }
-  }
-    ).then((response) => {
-        console.log(response)
-      }).then((data) => {
-        setUser(data)
-        console.log(user, data)
+		if(value.length <=10){
+			setphone(value)
+		}
 
-      })
+
+	}
+	const handlemessage = (e) => { setmessage(e.target.value) }
+
+  
+ 
+      const onInputChange = e => {
+        const { value } = e.target;
+        console.log('Input value: ', value);
+     
+        const re = /^[A-Za-z- ]+$/;
+        if (value === "" || re.test(value)) {
+          setTxt(value);
+        }
+      }
+
+
+  // const fetchData = () => {
+  //   return fetch("https://0fd7-43-249-54-66.in.ngrok.io/api/getcategory",
+  //     { 
+  //     method: 'Get',
+  //     headers: {
+  //     Accept: 'application/json'
+  //   }
+  // }
+  //   ).then((response) => {
+  //       console.log(response)
+  //     }).then((data) => {
+  //       setUser(data)
+  //       console.log(user, data)
+
+  //     })
       
 
-  }
+  // }
 
-  useEffect(() => {
-    fetchData();
-  })
-
-
-  let handleSubmit = async (e) => {
-    e.preventDefault();
-
-    let formData = new FormData();
-    formData.append('name', name);
-    formData.append('email', email)
-    formData.append('phone', phone)
-    formData.append('message', message)
-    formData.append('resume', file)
-
-    console.log(formData)
+  // useEffect(() => {
+  //   fetchData();
+  // })
 
 
+  let handleSubmit = (e) => {
 
-    try {
-      let res = await fetch("https://9a0c-43-249-54-66.in.ngrok.io/api/addresume", {
-        method: "POST",
-        // headers: { 'Content-Type': 'application/json' },
-        body: formData,
-      });
-      let resJson = await res.json();
+    e.preventDefault()
 
-      console.log(resJson)
-      if (res.status === 200) {
-        console.log("user created successfully")
-      } else {
-        console.log("Some error occured");
-      }
-    } catch (err) {
-      console.log(err);
+    if(option===""||option==="Select option"){
+      alert("please Select required Option")
     }
+
+    else{
+      toast.success('Information Saved Successfully', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+    }
+    // e.preventDefault();
+
+    // let formData = new FormData();
+    // formData.append('name', name);
+    // formData.append('email', email)
+    // formData.append('phone', phone)
+    // formData.append('message', message)
+    // formData.append('resume', file)
+
+    // console.log(formData)
+
+
+
+    // try {
+    //   let res = await fetch("https://9a0c-43-249-54-66.in.ngrok.io/api/addresume", {
+    //     method: "POST",
+    //     // headers: { 'Content-Type': 'application/json' },
+    //     body: formData,
+    //   });
+    //   let resJson = await res.json();
+
+    //   console.log(resJson)
+    //   if (res.status === 200) {
+    //     console.log("user created successfully")
+    //   } else {
+    //     console.log("Some error occured");
+    //   }
+    // } catch (err) {
+    //   console.log(err);
+
+    
+    // }
   };
 
 
 
   return (
     <div>
-
+ <ToastContainer position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light" />
       <section className="vitgram-wrapper-section">
         <div className="vitgram-image-wrapper">
           <div className="contact-us-content-wrapper">
@@ -142,21 +202,21 @@ export default function Career() {
                   </div>
                 </div>
                 <div className="schedule-interview-from-wrapper">
-                  <form action="" method="post" className="fillform-for-interview" onSubmit={(e) => { handleSubmit(e) }}>
+                  <form className="fillform-for-interview" onSubmit={(e) =>handleSubmit(e)}>
                     <div className="input-field-wrapper d-flex justify-content-between">
                       <div className="name-wrapper-input">
-                        <input type="text" autoComplete="off" required="" placeholder="name" className="form-control input-informaion" onChange={(e) => { setname(e.target.value) }} />
+                        <input type="text" autoComplete="off" placeholder="name" required={true} className="form-control input-informaion" value={txt} onChange={onInputChange} />
                       </div>
                       <div className="name-wrapper-input">
-                        <input type="email" autoComplete="off" required="" placeholder="email" className="form-control input-informaion" onChange={(e) => { setemail(e.target.value) }} />
+                        <input type="email" autoComplete="off" placeholder="email" required={true} className="form-control input-informaion" onChange={handleemail}/>
                       </div>
                     </div>
                     <div className="input-field-wrapper d-flex justify-content-between">
                       <div className="name-wrapper-input">
-                        <input type="text" autoComplete="off" required="" placeholder="Contact Phone" className="form-control input-informaion" onChange={(e) => { setphone(e.target.value) }} />
+                        <input type="number" autoComplete="off"  placeholder="phone" required={true} className="form-control input-informaion"  value={phone} onChange={handlephone} />
                       </div>
                       <div className="name-wrapper-input">
-                        <select className="select-option">
+                        <select className="select-option required" required={true} autoComplete='off'  onChange={(e)=>{setoption(e.target.value)}}> 
                           <option value="Select option">Select option</option>
                           <option value="web development">web development</option>
                           <option value="web development">web development</option>
@@ -166,13 +226,13 @@ export default function Career() {
                       </div>
                     </div>
                     <div className="discribe-massege">
-                      <textarea id="massege" name="massege" rows="5" cols="60" placeholder="Description Of Your Business Challenge" onChange={(e) => { setmessage(e.target.value) }}></textarea>
+                      <textarea id="massege" name="massege" rows="5" cols="60" placeholder="Description Of Your Business Challenge" onChange={(e) => { setmessage(e.target.value) }} required={true}></textarea>
                     </div>
                     <div className="uplaod-documents">
                       <label htmlFor="files" className="btn">Upload Document</label>
                       <span>(.pdf,.doc,.excel)</span>
-                      <input id="files" style={{ visibility: 'hidden' }} type="file" onChange={(e) => {
-                        setfile(e.target.files[0])
+                      <input id="files" required={true} style={{ visibility: 'hidden' }} type="file" onChange={(e) => {
+                        setfile(e.target.files[0] )
                       }} />
 
                     </div>
@@ -194,7 +254,7 @@ export default function Career() {
                       </div>
                     </div>
                     <div className="save-information-button">
-                      <button className="button" value="button">submit</button>
+                      <button className="button"  type='Submit'>submit</button>
                     </div>
                   </form>
                 </div>

@@ -1,7 +1,12 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
 export default function Blogs () {
+
+	useEffect(() => {
+		window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+	}, []);
 
 	const navigate =useNavigate()
 	
@@ -32,23 +37,23 @@ export default function Blogs () {
 			<div className="portfolio-tabs-wrapper-section">
 				<div className="inner-portfolio-tabs-wrapper">
       <div className="tabs-wrapper">
-        <ul className="nav nav-tabs align-items-center justify-content-between " id="nav-tab" role="tablist">
-          <li className="border-radius"><a className="nav-item movetabs active " role="tab" aria-selected="true" href="#1" data-toggle="tab">
+	  <ul className="nav nav-tabs align-items-center  " id="nav-tab" role="tablist">
+          <li className="border-radius all-different"><a className="nav-item movetabs active " role="tab" aria-selected="true" href="#1" data-toggle="tab">
             all
           </a></li>
-        <li>  <a className="nav-item movetabs" href="#2" role="tab" aria-selected="false" data-toggle="tab">
+        <li className='all-one-sib'>  <a className="nav-item movetabs" href="#2" role="tab" aria-selected="false" data-toggle="tab">
            Web Development
           </a></li>
-         <li  id='border-round-3'> <a className="nav-item movetabs " href="#3" role="tab" aria-selected="false" data-toggle="tab">
+         <li className='all-two-sib'> <a className="nav-item movetabs " href="#3" role="tab" aria-selected="false" data-toggle="tab">
             App Development
           </a></li>
-		  <li> <a className="nav-item movetabs " href="#4" role="tab" aria-selected="false" data-toggle="tab">
+		  <li className='all-one-round'> <a className="nav-item movetabs " href="#4" role="tab" aria-selected="false" data-toggle="tab">
             UI-UX Design
           </a></li>
 		  <li> <a className="nav-item movetabs " href="#5" role="tab" aria-selected="false" data-toggle="tab">
             Graphic Design
           </a></li>
-		  <li className="border-radius-left" id='border-round-6'> <a className="nav-item movetabs"  href="#6" role="tab" aria-selected="false" data-toggle="tab">
+		  <li className="border-radius-left"> <a className="nav-item movetabs" href="#6" role="tab" aria-selected="false" data-toggle="tab">
             Digital Marketing
           </a></li>
         </ul>

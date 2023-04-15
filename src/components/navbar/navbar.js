@@ -10,7 +10,7 @@ export default function Navbar() {
     const navigate = useNavigate();
 
     return (
-        <div className=''>
+        <div className='sticky-container'>
             <nav className="navbar navbar-expand-lg  navbar-dark parent" >
                 {/* <!-- Brand --> */}
                 <a onClick={() => { navigate("/") }} className="navbar-brand" >
@@ -40,10 +40,13 @@ export default function Navbar() {
 
                                   navigate("/")
 
-                            }}>Home</a>
-                            <div className='orange-parent'>
+                            }}>Home
+                             <div className='orange-parent'>
                              <i className="fa fa-circle orange-dot"></i>
                              </div>
+                            
+                            </a>
+                           
                         </li>
                         <li className="nav-item navother">
                             <a className="nav-link other-evry-li"onClick={(e) => {

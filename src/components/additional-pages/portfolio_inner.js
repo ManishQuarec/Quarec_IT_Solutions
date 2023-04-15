@@ -3,6 +3,10 @@ import { useNavigate } from 'react-router-dom'
 
 export default function Portfolio_inner() {
 
+    useEffect(() => {
+		window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+	}, []);
+
     const navigate =useNavigate()
 
 
