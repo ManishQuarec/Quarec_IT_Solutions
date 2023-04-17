@@ -1017,7 +1017,6 @@
     .help-for-information-wrapper {
         width: 100%;
         margin: 0 auto;
-        padding: 30px;
     }
 
     .d-flex.justify-content-between.align-items-center.gap {
@@ -1195,14 +1194,10 @@
     }
 
     .main-heading {
-        padding-left: 45px;
-        padding-right: 45px;
         padding-bottom: 15.66px;
     }
 
     .about-company-content {
-        padding-left: 45px;
-        padding-right: 45px;
         padding-bottom: 19.33px;
     }
 
@@ -1322,7 +1317,7 @@
     }
 
     .vision-image img {
-        width: 100%;
+        width: 70%;
     }
 
     .vision-content p {
@@ -1373,8 +1368,6 @@
     }
 
     .review-content-wrapper {
-        padding-left: 37px;
-        padding-right: 38px;
         text-align: center;
     }
 
@@ -1530,11 +1523,11 @@
 
     .inner-wrapper-content {
         background: #055393;
-        padding: 10px 47px;
+        padding: 10px 0px;
     }
 
     .information p {
-        font-size: 2.3vw;
+        font-size: 3.3vw;
         line-height: 17px;
     }
 
@@ -1665,7 +1658,7 @@
     }
 
     .copyrigth p {
-        font-size: 13px;
+        font-size: 8px;
         line-height: 20px;
     }
 
@@ -1751,8 +1744,6 @@
     .discribe-about-company {
         padding-top: 19.56px;
         padding-bottom: 19.56px;
-        padding-left: 45px;
-        padding-right: 45px;
         text-align: center;
     }
 
@@ -1816,7 +1807,7 @@
     }
 
     .career-discription p {
-        font-size: 10px;
+        font-size: 14px;
         line-height: 16px;
     }
 
@@ -1856,7 +1847,7 @@
     }
 
     .career-explain p {
-        font-size: 11px;
+        font-size: 14px;
         line-height: 16px;
     }
 
@@ -2107,7 +2098,7 @@
     }
 
     .hire-redux-titile-wrapper {
-        padding: 0px 55px 0px 35px;
+        padding: 0px;
     }
 
     .hire-redux-discription p {
@@ -2135,7 +2126,7 @@
     }
 
     .hire-redux-dreveloper-wrapper-bothpading {
-        padding: 0px 45px 0px 45px;
+        padding: 0px;
     }
 
     .interview-titile-wrapper h1 {
@@ -2419,6 +2410,7 @@
     }
 
     a.nav-link.getw-btn {
+        font-size: 13px;
         padding-top: 6px !important;
         padding-bottom: 6px !important;
     }
@@ -2753,6 +2745,29 @@
 
 @media only screen and (max-width: 500px) {
 
+
+.dire-redux-iamge-wrapper.width50 {
+    width: 100%;
+     padding-left: 0px; 
+     padding-right: 0px; 
+}
+
+    .web-development-inner-wrapper {
+        width: 100%;
+        box-shadow: rgb(179 175 175) 0px 4px 14px;
+        border-radius: 10px;
+        background: #ffffff;
+        padding: 30px 10px 44px 10px;}
+
+    .blog-inner-wrapper.blogtabs {
+        width: 100%;
+        padding: 12px 0px;
+    }
+
+    .conteeey{
+        padding: 0 9% !important;
+    }
+
     svg{
         width: 40px;
     }
@@ -2775,7 +2790,7 @@
     }
 
     .we-section-content {
-        padding: 0 5%;}
+        padding: 0 5% !important;}
 
         nav.navbar.navbar-expand-lg.navbar-dark.parent {
             padding-right: 0% !important;
@@ -2783,7 +2798,7 @@
 
         ul.social-icon {
             justify-content: space-between;
-            width: 63%;
+            width: 60%;
             display: flex;
             padding: 0px;
             margin: 0px auto;}
@@ -2903,15 +2918,28 @@
         font-family: 'Raleway';
         font-style: normal;
         font-weight: 500;
-        font-size: 2.3vw;
+        font-size: 3.3vw;
     }
 
     ul.social-icon li {
         width: 20%;
     }
+
+    a.nav-link.other-evry-li {
+        font-size: 12px;}
+
+        span.button-in-touch a {
+            color: #ffffff !important;
+            padding: 12px 13px 12px 13.2px !important
+    }
+      
 }
 
 @media only screen and (max-width: 770px)and (min-width: 500px) {
+
+    .wrapper-vision.d-flex.justify-content-between {
+        justify-content: center !important;
+    }
 
     nav.navbar.navbar-expand-lg.navbar-dark.parent {
         padding-right: 5px !important;
@@ -3041,7 +3069,7 @@
     }
 
     .viewmorebutton {
-        padding-top: 11px;
+        padding-top: 27px;
     }
 
     span.button-in-touch a {
@@ -3371,6 +3399,25 @@ a.nav-item.movetabs.active {
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
 
+    .plain-and-Process-wrapper.width25:hover .black-img {
+        transform: scale(1.1);
+        background: #f5c08d99;
+        border-radius: 12.5px;
+    }
+
+    .black-img {
+        padding: 10px;
+        transition: 0.7s;
+    }
+
+    /* .black-img img {
+        width: 40px;
+    }
+
+    .sideimg img {
+        width: 42px;
+    } */
+
     .other-evry-li {
         padding-left: 13px !important;
         padding-right: 13px !important;
@@ -3455,6 +3502,8 @@ a.nav-item.movetabs.active {
 
 }
 
-@media only screen and (max-width: 992px){
-    
+@media only screen and (max-width: 992px) and (min-width:500px){
+    span.button-in-touch a{
+        font-size: 2vw;
+    }
 }

@@ -93,3 +93,7 @@ ul.navbar-nav {
     margin-right: 0;
     margin-left: 0px;
   }
+
+  .orange-parent.active {
+    opacity: 1;
+}
