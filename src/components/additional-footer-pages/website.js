@@ -1,355 +1,426 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Website() {
 
+    useEffect(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }, []);
+
+    const [email, setemail] = useState("")
+    const [phone, setphone] = useState("")
+    const [file, setfile] = useState()
+    const [message, setmessage] = useState("")
+    const [txt, setTxt] = useState('');
+    const [option, setoption] = useState("")
+
+    const handleemail = (e) => { setemail(e.target.value) }
+    const handlephone = (e) => {
+
+        const value = e.target.value
+
+        if (value.length <= 10) {
+            setphone(value)
+        }
+
+
+    }
+    const handlemessage = (e) => { setmessage(e.target.value) }
+
+
+
+    const onInputChange = e => {
+        const { value } = e.target;
+        console.log('Input value: ', value);
+
+        const re = /^[A-Za-z- ]+$/;
+        if (value === "" || re.test(value)) {
+            setTxt(value);
+        }
+    }
+
+    let handleSubmit = (e) => {
+
+        e.preventDefault()
+
+        if (option === "" || option === "Select option") {
+            alert("please Select required Option")
+        }
+
+        else {
+            toast.success('Information Saved Successfully', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }
+    }
+
+
     return (
         <div>
-
-            <section class="vitgram-wrapper-section">
-                <div class="vitgram-image-wrapper">
-                    <div class="contact-us-content-wrapper">
-                        <div class="contact-us left38"><h1>Web Development</h1></div>
+            <ToastContainer position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light" />
+            <section className="vitgram-wrapper-section">
+                <div className="vitgram-image-wrapper">
+                    <div className="contact-us-content-wrapper">
+                        <div className="contact-us left38"><h1>Web Design/Development</h1></div>
                     </div>
                 </div>
 
             </section>
 
-            <section class=" digital-journey-wrapper-section">
-                <div class="container paddingleftright">
-                    <div class="digital-journey-content-wrapper">
-                        <div class="digital-journey-heading"><h1>Let us work together to make your digital journey look better</h1></div>
+            <section className=" digital-journey-wrapper-section">
+                <div className="contuiiiner">
+                    <div className="digital-journey-content-wrapper">
+                        <div className="digital-journey-heading"><h1>Your Foray Into The World Of Mobile Apps Begins Here</h1></div>
                     </div>
-                    <div class="digital-content-wrapper">
-                        <div class="digital-content"><p>With over 32,000 websites built on this platform since its inception in 2013, React is loved by the developer community and used by leading companies like Apple, PayPal, Netflix. Our developers adore it because applications have a clean and simple source code. Apart from creating captivating applications on our own, we also help you extend your development team. Get in touch with us to understand how you can hire our experts to execute your ideas efficiently. Also, talk to us</p></div>
+                    <div className="digital-content-wrapper">
+                        <div className="digital-content"><p>Quarec was born at the forefront of the mobile revolution. We are experts in app development, from the White House to the USO, and we’ve only gotten better. We have over 10 years of experience designing, delivering, and supporting world-class mobile applications using our award-winning Agile engineering principles, enabling us to ship over 50 apps each year to the Apple and Google stores.</p></div>
                     </div>
-
-                    <div class="d-flex justify-content-between gap20">
-                        <div class="plain-and-Process-wrapper width33.33">
-                            <div class="d-flex justify-content-between">
-                                <div class="black-img-wrappere">
-                                    <div class="black-img backgroundnone"><img src="assets/images/web1.png" alt="not found" /></div>
-                                </div>
-
-                            </div>
-                            <div class="web-heading leftafter"><h3>If you have idea for MVP</h3></div>
-                            <div class="Process-content"><p>Come to us with your next big idea or MVP, and we will help you build it ground up.</p></div>
-                        </div>
-                        <div class="plain-and-Process-wrapper width33.33">
-                            <div class="d-flex justify-content-between">
-                                <div class="black-img-wrappere">
-                                    <div class="black-img backgroundnone"><img src="assets/images/web.png" alt="not found" /></div>
-                                </div>
-
-                            </div>
-                            <div class="web-heading leftafter"><h3>If you have Wireframes</h3></div>
-                            <div class="Process-content"><p>Have a wireframe, bring it to us. Depending on the scope and requirements, we will develop a full-scale responsive UI-UX. From an in-depth analysis, prototyping, to test proof hosting, we will do it all.</p></div>
-                        </div>
-                        <div class="plain-and-Process-wrapper width33.33">
-                            <div class="d-flex justify-content-between">
-                                <div class="black-img-wrappere">
-                                    <div class="black-img backgroundnone"><img src="assets/images/web2.png" alt="not found" /></div>
-                                </div>
-
-                            </div>
-                            <div class="web-heading leftafter"><h3>If You Already Have an Existing App</h3></div>
-                            <div class="Process-content"><p>Come to us with your next big idea or MVP, and we will help you build it ground up.</p></div>
-                        </div>
-
-
                     </div>
-                </div>
-            </section>
-            <section class="bulid-customer-wrapper-section">
-                <div class="container paddingleftright">
-                    <div class="bulid-customer-inner-wrapper">
-                        <div class="bulid-customer-heading-wrapper">
-                            <div class="bulid-customer-heading"><h1>Build a customer-first online presence with React</h1></div>
+                     <div className='small-counnttiner'>
+                    <div className="d-flex justify-content-between gap20">
+                        <div className="plain-and-Process-wrapper width33.33">
+                            <div className="d-flex justify-content-between">
+                                <div className="black-img-wrappere">
+                                    <div className="black-img backgroundnone"><img src="assets/images/web1.png" alt="not found" /></div>
+                                </div>
+
+                            </div>
+                            <div className="web-heading leftafter"><h3>If you have idea for MVP</h3></div>
+                            <div className="Process-content"><p>Come to us with your next big idea or MVP, and we will help you build it ground up.</p></div>
                         </div>
-                        <div class="bulid-customer-contnet-werapper">
-                            <div class="bulid-customer-content"><p>We have worked extensively with React, and our skills have helped us develop several vibrant web applications. To us, our clients come first, but their appreciation of their end-user’s experience becomes our goal.</p></div>
+                        <div className="plain-and-Process-wrapper width33.33">
+                            <div className="d-flex justify-content-between">
+                                <div className="black-img-wrappere">
+                                    <div className="black-img backgroundnone"><img src="assets/images/web.png" alt="not found" /></div>
+                                </div>
+
+                            </div>
+                            <div className="web-heading leftafter"><h3>If you have Wireframes</h3></div>
+                            <div className="Process-content"><p>Have a wireframe, bring it to us. Depending on the scope and requirements, we will develop a full-scale responsive UI-UX. From an in-depth analysis, prototyping, to test proof hosting, we will do it all.</p></div>
                         </div>
-                    </div>
-                    <div class="web-development-position-wrapper">
-                        <div class="d-flex justify-content-between inner-wrapper-position-gap">
-                            <div class="web-development-inner-wrapper">
-                                <div class="inner-wrapper-position-wrapper">
-                                    <div class="react-logo-wrapper">
-                                        <div class="react-logo">
-                                            <img src="assets/images/react-logo.png" />
-                                        </div>
-                                    </div>
-                                    <div class="position-title-requriment-wrapper">
-                                        <div class="position-title-wrapper">
-                                            <div class="position-title"><h1>React Front-End Development</h1></div>
-                                        </div>
-                                        <div class="requriment-wrapper">
-                                            <div class="reuriment"><p>We are specialists at building SPAs, multiple architectures, and real-time data exchange applications. Leverage our expertise</p></div>
-                                        </div>
-                                    </div>
+                        <div className="plain-and-Process-wrapper width33.33">
+                            <div className="d-flex justify-content-between">
+                                <div className="black-img-wrappere">
+                                    <div className="black-img backgroundnone"><img src="assets/images/web2.png" alt="not found" /></div>
                                 </div>
+
                             </div>
-                            <div class="web-development-inner-wrapper">
-                                <div class="inner-wrapper-position-wrapper">
-                                    <div class="react-logo-wrapper">
-                                        <div class="react-logo">
-                                            <img src="assets/images/react-logo.png" />
-                                        </div>
-                                    </div>
-                                    <div class="position-title-requriment-wrapper">
-                                        <div class="position-title-wrapper">
-                                            <div class="position-title"><h1>React Native App Development</h1></div>
-                                        </div>
-                                        <div class="requriment-wrapper">
-                                            <div class="reuriment"><p>Our React developers are real experts when it comes to developing cross-platform native applications. Your satisfaction is guaranteed.</p></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="web-development-inner-wrapper">
-                                <div class="inner-wrapper-position-wrapper">
-                                    <div class="react-logo-wrapper">
-                                        <div class="react-logo">
-                                            <img src="assets/images/react-logo.png" />
-                                        </div>
-                                    </div>
-                                    <div class="position-title-requriment-wrapper">
-                                        <div class="position-title-wrapper">
-                                            <div class="position-title"><h1>React Plugin Development</h1></div>
-                                        </div>
-                                        <div class="requriment-wrapper">
-                                            <div class="reuriment"><p>A dedicated team specializing in React plugins will develop a new one or integrate an existing module to your current setup.</p></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="web-development-inner-wrapper">
-                                <div class="inner-wrapper-position-wrapper">
-                                    <div class="react-logo-wrapper">
-                                        <div class="react-logo">
-                                            <img src="assets/images/react-logo.png" />
-                                        </div>
-                                    </div>
-                                    <div class="position-title-requriment-wrapper">
-                                        <div class="position-title-wrapper">
-                                            <div class="position-title"><h1>React UI/UX Development</h1></div>
-                                        </div>
-                                        <div class="requriment-wrapper">
-                                            <div class="reuriment"><p>UI and UX—two things sacrosanct at JNext. Using React, we build captivating and engaging applications that put end-users first.</p></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="web-development-inner-wrapper">
-                                <div class="inner-wrapper-position-wrapper">
-                                    <div class="react-logo-wrapper">
-                                        <div class="react-logo">
-                                            <img src="assets/images/react-logo.png" />
-                                        </div>
-                                    </div>
-                                    <div class="position-title-requriment-wrapper">
-                                        <div class="position-title-wrapper">
-                                            <div class="position-title"><h1>React Integration</h1></div>
-                                        </div>
-                                        <div class="requriment-wrapper">
-                                            <div class="reuriment"><p>If you want React integrated with your existing web app and system, just reach out to our team of skilled React developers.</p></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="web-development-inner-wrapper">
-                                <div class="inner-wrapper-position-wrapper">
-                                    <div class="react-logo-wrapper">
-                                        <div class="react-logo">
-                                            <img src="assets/images/react-logo.png" />
-                                        </div>
-                                    </div>
-                                    <div class="position-title-requriment-wrapper">
-                                        <div class="position-title-wrapper">
-                                            <div class="position-title"><h1>React Product Development</h1></div>
-                                        </div>
-                                        <div class="requriment-wrapper">
-                                            <div class="reuriment"><p>Development that is tailored to your needs—it is error-free, result-oriented, and extremely quick.</p></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="web-development-inner-wrapper">
-                                <div class="inner-wrapper-position-wrapper">
-                                    <div class="react-logo-wrapper">
-                                        <div class="react-logo">
-                                            <img src="assets/images/react-logo.png" />
-                                        </div>
-                                    </div>
-                                    <div class="position-title-requriment-wrapper">
-                                        <div class="position-title-wrapper">
-                                            <div class="position-title"><h1>Migrating Website To React</h1></div>
-                                        </div>
-                                        <div class="requriment-wrapper">
-                                            <div class="reuriment"><p>Make use of our expertise in migrating or upgrading your existing web apps to React without losing your data.</p></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="web-development-inner-wrapper">
-                                <div class="inner-wrapper-position-wrapper">
-                                    <div class="react-logo-wrapper">
-                                        <div class="react-logo">
-                                            <img src="assets/images/react-logo.png" />
-                                        </div>
-                                    </div>
-                                    <div class="position-title-requriment-wrapper">
-                                        <div class="position-title-wrapper">
-                                            <div class="position-title"><h1>React Support & Maintenance</h1></div>
-                                        </div>
-                                        <div class="requriment-wrapper">
-                                            <div class="reuriment"><p>We are just a call away. 24/7 support and maintenance at your fingertips.</p></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <div className="web-heading leftafter"><h3>If You Already Have an Existing App</h3></div>
+                            <div className="Process-content"><p>Come to us with your next big idea or MVP, and we will help you build it ground up.</p></div>
+                        </div>
 
 
-                        </div>
                     </div>
                 </div>
             </section>
+            <section className="bulid-customer-wrapper-section">
+                <div className="vgg">
+                    <div className="bulid-customer-inner-wrapper your-wany">
+                        <div className="bulid-customer-heading-wrapper">
+                            <div className="bulid-customer-heading"><h1>Our Mobile App Development Domain Expertise</h1></div>
+                        </div>
+                        <div className="bulid-customer-contnet-werapper">
+                            <div className="bulid-customer-content"><p>We have worked extensively with React, and our skills have helped us develop several vibrant web applications. To us, our clients come first, but their appreciation of their end-user’s experience becomes our goal.</p></div>
+                        </div>
+                    </div>
+                    <div className="web-development-position-wrapper your-ploint">
+                        <div className="d-flex justify-content-between inner-wrapper-position-gap">
+                            <div className="web-development-inner-wrapper">
+                                <div className="inner-wrapper-position-wrapper">
+                                    <div className="react-logo-wrapper">
+                                        <div className="react-logo">
+                                            <img src="assets/images/react-logo.png" />
+                                        </div>
+                                    </div>
+                                    <div className="position-title-requriment-wrapper">
+                                        <div className="position-title-wrapper">
+                                            <div className="position-title"><h1>Cross-Platform Hybrid Mobile</h1></div>
+                                        </div>
+                                        <div className="requriment-wrapper">
+                                            <div className="reuriment"><p>We are specialists at building SPAs, multiple architectures, and real-time data exchange applications. Leverage our expertise</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="web-development-inner-wrapper">
+                                <div className="inner-wrapper-position-wrapper">
+                                    <div className="react-logo-wrapper">
+                                        <div className="react-logo">
+                                            <img src="assets/images/react-logo.png" />
+                                        </div>
+                                    </div>
+                                    <div className="position-title-requriment-wrapper">
+                                        <div className="position-title-wrapper">
+                                            <div className="position-title"><h1>iOS Development</h1></div>
+                                        </div>
+                                        <div className="requriment-wrapper">
+                                            <div className="reuriment"><p>Our React developers are real experts when it comes to developing cross-platform native applications. Your satisfaction is guaranteed.</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="web-development-inner-wrapper">
+                                <div className="inner-wrapper-position-wrapper">
+                                    <div className="react-logo-wrapper">
+                                        <div className="react-logo">
+                                            <img src="assets/images/react-logo.png" />
+                                        </div>
+                                    </div>
+                                    <div className="position-title-requriment-wrapper">
+                                        <div className="position-title-wrapper">
+                                            <div className="position-title"><h1>Android Development</h1></div>
+                                        </div>
+                                        <div className="requriment-wrapper">
+                                            <div className="reuriment"><p>A dedicated team specializing in React plugins will develop a new one or integrate an existing module to your current setup.</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="web-development-inner-wrapper">
+                                <div className="inner-wrapper-position-wrapper">
+                                    <div className="react-logo-wrapper">
+                                        <div className="react-logo">
+                                            <img src="assets/images/react-logo.png" />
+                                        </div>
+                                    </div>
+                                    <div className="position-title-requriment-wrapper">
+                                        <div className="position-title-wrapper">
+                                            <div className="position-title"><h1>QA & Testing</h1></div>
+                                        </div>
+                                        <div className="requriment-wrapper">
+                                            <div className="reuriment"><p>UI and UX—two things sacrosanct at JNext. Using React, we build captivating and engaging applications that put end-users first.</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="web-development-inner-wrapper">
+                                <div className="inner-wrapper-position-wrapper">
+                                    <div className="react-logo-wrapper">
+                                        <div className="react-logo">
+                                            <img src="assets/images/react-logo.png" />
+                                        </div>
+                                    </div>
+                                    <div className="position-title-requriment-wrapper">
+                                        <div className="position-title-wrapper">
+                                            <div className="position-title"><h1>Mobile Backend Engineering</h1></div>
+                                        </div>
+                                        <div className="requriment-wrapper">
+                                            <div className="reuriment"><p>If you want React integrated with your existing web app and system, just reach out to our team of skilled React developers.</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="web-development-inner-wrapper">
+                                <div className="inner-wrapper-position-wrapper">
+                                    <div className="react-logo-wrapper">
+                                        <div className="react-logo">
+                                            <img src="assets/images/react-logo.png" />
+                                        </div>
+                                    </div>
+                                    <div className="position-title-requriment-wrapper">
+                                        <div className="position-title-wrapper">
+                                            <div className="position-title"><h1>Scalability & Interoperability</h1></div>
+                                        </div>
+                                        <div className="requriment-wrapper">
+                                            <div className="reuriment"><p>Development that is tailored to your needs—it is error-free, result-oriented, and extremely quick.</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="web-development-inner-wrapper">
+                                <div className="inner-wrapper-position-wrapper">
+                                    <div className="react-logo-wrapper">
+                                        <div className="react-logo">
+                                            <img src="assets/images/react-logo.png" />
+                                        </div>
+                                    </div>
+                                    <div className="position-title-requriment-wrapper">
+                                        <div className="position-title-wrapper">
+                                            <div className="position-title"><h1>Game Development</h1></div>
+                                        </div>
+                                        <div className="requriment-wrapper">
+                                            <div className="reuriment"><p>Make use of our expertise in migrating or upgrading your existing web apps to React without losing your data.</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="web-development-inner-wrapper">
+                                <div className="inner-wrapper-position-wrapper">
+                                    <div className="react-logo-wrapper">
+                                        <div className="react-logo">
+                                            <img src="assets/images/react-logo.png" />
+                                        </div>
+                                    </div>
+                                    <div className="position-title-requriment-wrapper">
+                                        <div className="position-title-wrapper">
+                                            <div className="position-title"><h1>Industrial Apps </h1></div>
+                                        </div>
+                                        <div className="requriment-wrapper">
+                                            <div className="reuriment"><p>We are just a call away. 24/7 support and maintenance at your fingertips.</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </section>
 
 
 
-            <section class="react-development-stack-section-wrapper">
-                <div class="container paddingleftright">
-                    <div class="react-developer-title-wrapper">
-                        <div class="inner-title">
+            <section className="react-development-stack-section-wrapper">
+                <div className="your-wany">
+                    <div className="react-developer-title-wrapper">
+                        <div className="inner-title">
                             <h1>UX/UI Design Stack</h1>
                         </div>
                     </div>
+                    <div className="">
+                        <div className="col-xs-12">
+                            <div className="tab-react-Development">
+                                <ul className="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                    <li className='other-type-li'> <a className="nav-item nav-link active react-tabs" role="tab" aria-selected="true" href="#1" data-toggle="tab">
+                                        Libraries<span className='padding-lft'><i className="fa fa-caret-right" aria-hidden="true"></i></span>
+                                    </a></li>
+                                    <li className='other-type-li'><a className="nav-item nav-link react-tabs " href="#2" role="tab" aria-selected="false" data-toggle="tab">
+                                        APIs<span className='padding-lft'><i className="fa fa-caret-right" aria-hidden="true"></i></span>
+                                    </a></li>
+                                    <li className='other-type-li'><a className="nav-item nav-link react-tabs" href="#3" role="tab" aria-selected="false" data-toggle="tab">
+                                        Platforms<span className='padding-lft'><i className="fa fa-caret-right" aria-hidden="true"></i></span>
+                                    </a></li>
+                                    <li className='other-type-li'><a className="nav-item nav-link react-tabs" href="#4" role="tab" aria-selected="false" data-toggle="tab">
+                                        UI Framework<span className='padding-lft'><i className="fa fa-caret-right" aria-hidden="true"></i></span>
+                                    </a></li>
+                                    <li className='other-type-li'><a className="nav-item nav-link react-tabs" href="#5" role="tab" aria-selected="false" data-toggle="tab">
+                                        Database<span className='padding-lft'><i className="fa fa-caret-right" aria-hidden="true"></i></span>
+                                    </a></li>
+                                    <li className='other-type-li'><a className="nav-item nav-link react-tabs" href="#6" role="tab" aria-selected="false" data-toggle="tab">
+                                        Tools<span className='padding-lft'><i className="fa fa-caret-right" aria-hidden="true"></i></span>
+                                    </a></li>
+                                    <li className='other-type-li'><a className="nav-item nav-link react-tabs" href="#7" role="tab" aria-selected="false" data-toggle="tab">
+                                        Other<span className='padding-lft'><i className="fa fa-caret-right" aria-hidden="true"></i></span>
+                                    </a></li>
+                                </ul>
+                            </div>
+                            <div className="tab-content react-Development">
+                                <div className="tab-pane active" id="1">
+                                    <ul className="list-of-react-development">
+                                        <li>React</li>
+                                        <li>Socket IO</li>
+                                        <li>Canvac</li>
+                                        <li>GraphQL</li>
+                                        <li>Firebase</li>
+                                    </ul>
+                                </div>
+                                <div className="tab-pane" id="2">
+                                    <ul className="list-of-react-development">
+                                        <li>React</li>
+                                        <li>Socket IO</li>
+                                        <li>Canvac</li>
+                                        <li>GraphQL</li>
+                                        <li>Firebase</li>
+                                        <li>React</li>
+                                        <li>Socket IO</li>
+                                        <li>Canvac</li>
+                                        <li>GraphQL</li>
+                                        <li>Firebase</li>
+                                    </ul>
+                                </div>
+                                <div className="tab-pane" id="3">
+                                    <ul className="list-of-react-development">
+                                        <li>React</li>
 
-                    <div class="col-xs-12">
-                        <div class="tab-react-Development">
-                            <ul class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                                <li> <a class="nav-item nav-link active react-tabs" role="tab" aria-selected="true" href="#1" data-toggle="tab">
-                                    Libraries
-                                </a></li>
-                                <li><a class="nav-item nav-link react-tabs " href="#2" role="tab" aria-selected="false" data-toggle="tab">
-                                    APIs
-                                </a></li>
-                                <li><a class="nav-item nav-link react-tabs" href="#3" role="tab" aria-selected="false" data-toggle="tab">
-                                    Platforms
-                                </a></li>
-                                <li><a class="nav-item nav-link react-tabs" href="#4" role="tab" aria-selected="false" data-toggle="tab">
-                                    UI Framework
-                                </a></li>
-                                <li><a class="nav-item nav-link react-tabs" href="#5" role="tab" aria-selected="false" data-toggle="tab">
-                                    Database
-                                </a></li>
-                                <li><a class="nav-item nav-link react-tabs" href="#6" role="tab" aria-selected="false" data-toggle="tab">
-                                    Tools
-                                </a></li>
-                                <li><a class="nav-item nav-link react-tabs" href="#7" role="tab" aria-selected="false" data-toggle="tab">
-                                    Other
-                                </a></li>
-                            </ul>
-                        </div>
-                        <div class="tab-content react-Development">
-                            <div class="tab-pane active" id="1">
-                                <ul class="list-of-react-development">
-                                    <li>React</li>
-                                    <li>Socket IO</li>
-                                    <li>Canvac</li>
-                                    <li>GraphQL</li>
-                                    <li>Firebase</li>
-                                </ul>
-                            </div>
-                            <div class="tab-pane" id="2">
-                                <ul class="list-of-react-development">
-                                    <li>React</li>
-                                    <li>Socket IO</li>
-                                    <li>Canvac</li>
-                                    <li>GraphQL</li>
-                                    <li>Firebase</li>
-                                    <li>React</li>
-                                    <li>Socket IO</li>
-                                    <li>Canvac</li>
-                                    <li>GraphQL</li>
-                                    <li>Firebase</li>
-                                </ul>
-                            </div>
-                            <div class="tab-pane" id="3">
-                                <ul class="list-of-react-development">
-                                    <li>React</li>
+                                        <li>GraphQL</li>
+                                        <li>Firebase</li>
+                                    </ul>
+                                </div>
+                                <div className="tab-pane" id="4">
+                                    <ul className="list-of-react-development">
+                                        <li>React</li>
+                                        <li>Socket IO</li>
+                                        <li>Canvac</li>
+                                        <li>GraphQL</li>
+                                        <li>Firebase</li>
+                                    </ul>
+                                </div>
+                                <div className="tab-pane" id="5">
+                                    <ul className="list-of-react-development">
+                                        <li>React</li>
+                                        <li>Socket IO</li>
+                                        <li>Canvac</li>
 
-                                    <li>GraphQL</li>
-                                    <li>Firebase</li>
-                                </ul>
-                            </div>
-                            <div class="tab-pane" id="4">
-                                <ul class="list-of-react-development">
-                                    <li>React</li>
-                                    <li>Socket IO</li>
-                                    <li>Canvac</li>
-                                    <li>GraphQL</li>
-                                    <li>Firebase</li>
-                                </ul>
-                            </div>
-                            <div class="tab-pane" id="5">
-                                <ul class="list-of-react-development">
-                                    <li>React</li>
-                                    <li>Socket IO</li>
-                                    <li>Canvac</li>
+                                    </ul>
+                                </div>
+                                <div className="tab-pane" id="6">
+                                    <ul className="list-of-react-development">
+                                        <li>React</li>
+                                        <li>Socket IO</li>
+                                        <li>Canvac</li>
 
-                                </ul>
-                            </div>
-                            <div class="tab-pane" id="6">
-                                <ul class="list-of-react-development">
-                                    <li>React</li>
-                                    <li>Socket IO</li>
-                                    <li>Canvac</li>
-
-                                </ul>
-                            </div>
-                            <div class="tab-pane" id="7">
-                                <ul class="list-of-react-development">
-                                    <li>React</li>
-                                    <li>Socket IO</li>
-                                    <li>Canvac</li>
-                                    <li>GraphQL</li>
-                                    <li>Firebase</li>
-                                </ul>
+                                    </ul>
+                                </div>
+                                <div className="tab-pane" id="7">
+                                    <ul className="list-of-react-development">
+                                        <li>React</li>
+                                        <li>Socket IO</li>
+                                        <li>Canvac</li>
+                                        <li>GraphQL</li>
+                                        <li>Firebase</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </section>
-            <section class="customer-centric-wrapper-section">
-                <div class="container paddingleftright">
-                    <div class="customer-centric-inner-wrapper">
-                        <div class="customer-centric-titile">
+            <section className="customer-centric-wrapper-section">
+                <div className="your-wany">
+                    <div className="customer-centric-inner-wrapper">
+                        <div className="customer-centric-titile">
                             <h1>A Customer-Centric React Development Firm</h1>
                         </div>
-                        <div class="customer-centric-details">
+                        <div className="customer-centric-details">
                             <p>Our expertise in React is unparalleled. Having worked with hundreds of clients from around the world, we now understand this back-end technology like the back of our hands. We would love for you to work with us. Talk to us about your pet project or hire a developer from us. We guarantee end-to-end support be it auditing, consulting, migrating, or developing your latest application.</p>
                         </div>
                     </div>
-                    <div class="hire-redux-developer-wrapper">
-                        <div class="d-flex justify-content-between hire-redux-gap">
-                            <div class="hire-redux-dreveloper-wrapper width50">
-                                <div class="hire-redux-titile-wrapper">
-                                    <div class="hire-redux-title">
-                                        <h1>Hire Redux Developer to Build Excellent Web Application</h1>
+                    <div className="hire-redux-developer-wrapper">
+                        <div className="d-flex justify-content-between hire-redux-gap">
+                            <div className="hire-redux-dreveloper-wrapper width50">
+                                <div className="hire-redux-titile-wrapper">
+                                    <div className="hire-redux-title">
+                                        <h1>Need a high-performance mobile app?</h1>
                                     </div>
-                                    <div class="hire-redux-discription-wrapper">
-                                        <div class="hire-redux-discription">
-                                            <p>Our developers use Redux to manage complex code because it is simple and scalable. Inspired by Facebook’s architecture, Redux is an open-source JavaScript library most used with libraries such as React or Angular to build captivating UI.</p>
-                                            <p>At JNext, we use Redux to uncomplicate interactions that are tough to express with React’s component state. This ensures that your applications are built on clean, flexible, secure, and robust code.</p>
-                                            <p>We are ready to partner with you. Hire our Redux developers and give your end-users an enriching experience to look forward to.</p>
+                                    <div className="hire-redux-discription-wrapper">
+                                        <div className="hire-redux-discription padding10">
+                                            <p>At our mobile app development company, we specialize in creating custom mobile applications for businesses across industries. Our team of experienced developers, designers, and project managers work together to bring your vision to life. From concept to launch, we’ll guide you through every step of the process.</p>
+                                            <p>Our approach to mobile app development is focused on delivering the highest quality product to our clients. We take a user-centric approach, starting with in-depth research and analysis to understand your target audience and their needs. From there, we create a comprehensive app development plan, including wireframes, design mockups, and functional prototypes. We also conduct extensive testing throughout the development process to ensure that the app is fully functional and bug-free..</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="dire-redux-iamge-wrapper width50">
-                                <div class="hire-redux-image">
-                                    <img src="assets/images/hire-redux.png" />
+                            <div className="dire-redux-iamge-wrapper width50">
+                                <div className="hire-redux-image">
+                                    <img src="assets/images/app-development1.png" />
                                 </div>
                             </div>
                         </div>
@@ -357,27 +428,26 @@ export default function Website() {
                 </div>
             </section>
 
-            <section class="customer-centric-wrapper-section-padding">
-                <div class="container paddingleftright">
+            <section className="customer-centric-wrapper-section-padding">
+                <div className="your-wany">
 
-                    <div class="hire-redux-developer-wrapper">
-                        <div class="d-flex justify-content-between hire-redux-gap">
-                            <div class="dire-redux-iamge-wrapper width50">
-                                <div class="hire-redux-image">
-                                    <img src="assets/images/hire-redux1.png" />
+                    <div className="hire-redux-developer-wrapper">
+                        <div className="d-flex justify-content-between hire-redux-gap">
+                            <div className="dire-redux-iamge-wrapper width50">
+                                <div className="hire-redux-image">
+                                    <img src="assets/images/app-development2.png" />
                                 </div>
                             </div>
-                            <div class="dire-redux-iamge-wrapper width50">
-                                <div class="hire-redux-dreveloper-wrapper-bothpading">
-                                    <div class="hire-redux-titile-wrapper-innerpadding">
-                                        <div class="hire-redux-title">
-                                            <h1>Begin Your React Journey With Us</h1>
+                            <div className="dire-redux-iamge-wrapper width50">
+                                <div className="hire-redux-dreveloper-wrapper-bothpading">
+                                    <div className="hire-redux-titile-wrapper-innerpadding">
+                                        <div className="hire-redux-title">
+                                            <h1>App Development Process</h1>
                                         </div>
-                                        <div class="hire-redux-discription-wrapper">
-                                            <div class="hire-redux-discription">
-                                                <p>Today’s end-user is looking for aesthetically pleasing interfaces. React caters to this need with its reusable components and easily deployable framework. No wonder it is widely preferred.</p>
-                                                <p>At JNext, we have created specialized teams that provide top-of-the-line React services. Their in-depth knowledge helps us develop custom applications based on your requirements.</p>
-                                                <p>Do not hesitate to get in touch with us and tap into our expertise in building lightweight and interactive applications using React.</p>
+                                        <div className="hire-redux-discription-wrapper">
+                                            <div className="hire-redux-discription padding10">
+                                                <p>Whether you’re looking to create a new app from scratch or improve an existing one, our team is here to help. Contact us today to learn more about our mobile app development services and how we can help your business succeed in the mobile world.</p>
+                                                <p>We use the latest technologies and development frameworks to ensure that your app is fast, reliable, and scalable. Our team is experienced in building apps for both iOS and Android, and we can help you decide which platform is best suited for your business. We also offer ongoing support and maintenance services to ensure that your app stays up-to-date and continues to provide value to your customers..</p>
                                             </div>
                                         </div>
                                     </div>
@@ -388,32 +458,32 @@ export default function Website() {
                 </div>
             </section>
             {/* <!-- schedule interview section start --> */}
-            <section class="schedule-interview-section-wrapper">
-                <div class="container paddingleftright">
-                    <div class="schedule-interview-title-wrapper">
-                        <div class="interview-titile-wrapper">
+            <section className="schedule-interview-section-wrapper">
+                <div className="your-wany">
+                    <div className="schedule-interview-title-wrapper">
+                        <div className="interview-titile-wrapper">
                             <h1>Schedule A Developer Interview And Get 15 Days Risk-Free Trial</h1>
                         </div>
-                        <div class="interview-schedule-discription">
+                        <div className="interview-schedule-discription">
                             <p>We ensure you’re matched with the right talent based on your requirement.</p>
                         </div>
                     </div>
-                    <div class="schedule-interview-from-wrapper">
-                        <form action="" method="post" class="fillform-for-interview">
-                            <div class="input-field-wrapper d-flex justify-content-between">
-                                <div class="name-wrapper-input">
-                                    <input type="text" autocomplete="off" required="" placeholder="name" class="form-control input-informaion" />
+                    <div className="schedule-interview-from-wrapper">
+                        <form  className="fillform-for-interview" onSubmit={(e) =>handleSubmit(e)}>
+                            <div className="input-field-wrapper d-flex justify-content-between">
+                                <div className="name-wrapper-input">
+                                    <input type="text" autoComplete="off" placeholder="name" required={true} className="form-control input-informaion" value={txt} onChange={onInputChange}  />
                                 </div>
-                                <div class="name-wrapper-input">
-                                    <input type="email" autocomplete="off" required="" placeholder="email" class="form-control input-informaion" />
+                                <div className="name-wrapper-input">
+                                    <input type="email" autoComplete="off" placeholder="email" required={true} className="form-control input-informaion" onChange={handleemail} />
                                 </div>
                             </div>
-                            <div class="input-field-wrapper d-flex justify-content-between">
-                                <div class="name-wrapper-input">
-                                    <input type="text" autocomplete="off" required="" placeholder="Contact Phone" class="form-control input-informaion" />
+                            <div className="input-field-wrapper d-flex justify-content-between">
+                                <div className="name-wrapper-input">
+                                    <input type="number" autoComplete="off"  placeholder="phone" required={true} className="form-control input-informaion"  value={phone} onChange={handlephone}/>
                                 </div>
-                                <div class="name-wrapper-input">
-                                    <select class="select-option">
+                                <div className="name-wrapper-input">
+                                    <select className="select-option required" required={true} autoComplete='off'  onChange={(e)=>{setoption(e.target.value)}}>
                                         <option value="Select option">Select option</option>
                                         <option value="web development">web development</option>
                                         <option value="web development">web development</option>
@@ -422,17 +492,19 @@ export default function Website() {
                                     </select>
                                 </div>
                             </div>
-                            <div class="discribe-massege">
-                                <textarea id="massege" name="massege" rows="5" cols="60" placeholder="Description Of Your Business Challenge"></textarea>
+                            <div className="discribe-massege">
+                                <textarea id="massege" name="massege" rows="5" cols="60" placeholder="Description Of Your Business Challenge" onChange={(e) => { setmessage(e.target.value) }} required={true}></textarea>
                             </div>
-                            <div class="uplaod-documents">
-                                <label for="files" class="btn">Upload Document</label>
+                            <div className="uplaod-documents">
+                                <label for="files" className="btn">Upload Document</label>
                                 <span>(.pdf,.doc,.excel)</span>
-                                <input id="files" style={{visibility:'hidden'}} type="file" />
+                                <input id="files" required={true} style={{ visibility: 'hidden' }} type="file" onChange={(e) => {
+                        setfile(e.target.files[0] )
+                      }} />
 
                             </div>
-                            <div class="save-information-wrapper">
-                                <div class="save-information">
+                            <div className="save-information-wrapper">
+                                <div className="save-information">
                                     <span><svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                                         <rect width="15" height="15" transform="translate(0 0.5)" fill="url(#pattern0)" />
                                         <defs>
@@ -445,8 +517,8 @@ export default function Website() {
                                     </span><p>We all know how important your informations is.They are always safe with us.</p>
                                 </div>
                             </div>
-                            <div class="save-information-button">
-                                <button class="button" value="button">submit</button>
+                            <div className="save-information-button">
+                                <button className="button" type='Submit'>submit</button>
                             </div>
                         </form>
                     </div>
@@ -454,20 +526,20 @@ export default function Website() {
             </section>
             {/* <!-- schedule interview section end -->
 <!-- cta section start --> */}
-            <section class="cta-section-wrapper">
-                <div class="container paddingleftright">
-                    <div class="cta-inner-wrapper">
-                        <div class="d-flex justify-content-between align-items-center cta">
-                            <div class="cta-title-wrapper">
-                                <div class="cta-title">
+            <section className="cta-section-wrapper">
+                <div className="your-wany">
+                    <div className="cta-inner-wrapper">
+                        <div className="d-flex justify-content-between align-items-center cta">
+                            <div className="cta-title-wrapper">
+                                <div className="cta-title">
                                     <h1>Hurry Up! Contact Us Today And Get</h1>
                                 </div>
-                                <div class="cta-Consultation">
+                                <div className="cta-Consultation">
                                     <p>Free First Consultation</p>
                                 </div>
                             </div>
-                            <div class="cta-button-wrapper">
-                                <div class="cta-button">
+                            <div className="cta-button-wrapper">
+                                <div className="cta-button">
                                     <button type="button">BOOK YOUR CONSULTATION</button>
                                 </div>
                             </div>
@@ -475,7 +547,6 @@ export default function Website() {
                     </div>
                 </div>
             </section>
-
         </div>
     )
 

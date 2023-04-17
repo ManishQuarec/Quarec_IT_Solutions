@@ -1,21 +1,25 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState ,useEffect} from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Get_in_touch() {
 
+	useEffect(() => {
+		window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+	}, []);
 
-	
 	const [email, setemail] = useState("")
 	const [phone, setphone] = useState("")
 	const [message, setmessage] = useState("")
 
-	
+
 	const handleemail = (e) => { setemail(e.target.value) }
 	const handlephone = (e) => {
-		
-		const value=e.target.value
 
-		if(value.length <=10){
+		const value = e.target.value
+
+		if (value.length <= 10) {
 			setphone(value)
 		}
 	}
@@ -27,24 +31,45 @@ export default function Get_in_touch() {
 			alert("please Enter 10 digit Phone Number")
 		}
 		else {
-			console.log(txt, email, phone, message)
+			toast.success('Information Saved Successfully', {
+				position: "top-right",
+				autoClose: 5000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+				theme: "light",
+			});
 		}
 	}
 
 	const [txt, setTxt] = useState('');
- 
-      const onInputChange = e => {
-        const { value } = e.target;
-        console.log('Input value: ', value);
-     
-        const re = /^[A-Za-z- ]+$/;
-        if (value === "" || re.test(value)) {
-          setTxt(value);
-        }
-      }
+
+	const onInputChange = e => {
+		const { value } = e.target;
+		console.log('Input value: ', value);
+
+		const re = /^[A-Za-z- ]+$/;
+		if (value === "" || re.test(value)) {
+			setTxt(value);
+		}
+	}
 
 	return (
 		<div>
+			<ToastContainer
+				position="top-right"
+				autoClose={5000}
+				hideProgressBar={false}
+				newestOnTop={false}
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+				theme="light"
+			/>
 
 			<section className="vitgram-wrapper-section">
 				<div className="vitgram-image-wrapper">
@@ -58,7 +83,7 @@ export default function Get_in_touch() {
 
 			{/* <!-- Get In Touch section start --> */}
 			<section className="conatct-us-section-wrapper background-transparent">
-				<div className="container paddingleftright">
+				<div className="conttuuuuyr paddingleftright">
 					<div className="conact-contnet-wrappere">
 						<div className="gat-in-touch"><h3>Get In Touch</h3></div>
 						<div className="content-for-help color#1568A2"><h1>Hey! Let’s Talk</h1></div>
@@ -74,7 +99,7 @@ export default function Get_in_touch() {
 										<input type="email" autoComplete="off" placeholder="email" required={true} className="form-control fleidclass border-color" onChange={handleemail} />
 									</div>
 									<div className="input-field">
-										<input type="number" autoComplete="off"  placeholder="phone" required={true} className="form-control fleidclass border-color"  value={phone} onChange={handlephone} />
+										<input type="number" autoComplete="off" placeholder="phone" required={true} className="form-control fleidclass border-color" value={phone} onChange={handlephone} />
 									</div>
 									<div className="input-field">
 										<textarea className="form-control border-color fleidclass" rows="5" id="comment" name="text" placeholder="message" onChange={handlemessage}></textarea>
@@ -122,9 +147,9 @@ export default function Get_in_touch() {
 								<div className="follow-us-wrapper">
 									<div className="folow-us"><h2>Follow us</h2></div>
 									<ul className="social-icon">
-										<li><a href="#"><i className="fa fa-linkedin" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i className="fa fa-instagram" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
+										<li><a href="https://www.linkedin.com/company/quarec-it-solutions"><i className="fa fa-linkedin" aria-hidden="true"></i></a></li>
+										<li><a href="https://www.instagram.com/quarecitsolution/"><i className="fa fa-instagram" aria-hidden="true"></i></a></li>
+										<li><a href="https://www.facebook.com/quarecitsolutions/"><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
 										<li><a href="#"><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
 									</ul>
 								</div>

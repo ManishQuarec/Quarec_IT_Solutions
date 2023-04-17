@@ -7,9 +7,18 @@
     color: black !important;
 }
 
+nav.navbar.navbar-expand-lg.navbar-dark.parent {
+    padding: 7px 6.9%;}
+
 .resposne-head {
     flex-direction: row-reverse !important;
-    padding-right: 25px !important;
+}
+
+.sticky-container {
+    position: sticky;
+    top: 0 !important;
+    z-index: 9999999;
+    background: white;
 }
 
 .other-evry-li {
@@ -18,7 +27,7 @@
     font-family: 'Inter' !important;
     font-style: normal !important;
     font-weight: 400 !important;
-    font-size: 18px !important;
+    font-size: 1.3vw !important;
     line-height: 22px !important;
     /* identical to box height */
 
@@ -40,14 +49,14 @@ a.nav-link :hover {
 li.nav-item.navother:hover a {
     transition: 1s;
     color: #f69320 !important;
-    margin-top: -10px;
+    margin-top: -6px;
 }
 li.nav-item.navother:hover .orange-parent {
     opacity: 1;
     transition: 1s;
 }
 a.nav-link.other-evry-li.active, .orange-dot {
-    margin-top: -10px;
+    margin-top: -6px;
     color: #f69320 !important;
     opacity: 1 !important;
 }
@@ -83,5 +92,8 @@ ul.navbar-nav {
   .navbar-brand {
     margin-right: 0;
     margin-left: 0px;
-    padding-left: 16px;
   }
+
+  .orange-parent.active {
+    opacity: 1;
+}

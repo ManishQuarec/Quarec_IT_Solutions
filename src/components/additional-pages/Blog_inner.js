@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
 import "./blog_inner.css"
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
 export default function Blog_inner (){
+
+    useEffect(() => {
+		window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+	}, []);
 
     const navigate = useNavigate()
   
