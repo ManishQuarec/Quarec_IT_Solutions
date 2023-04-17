@@ -331,10 +331,10 @@ export default function Navbar() {
                   </div>
                 </a>
               </li>
-              <li className="nav-item navother">
+              <li className="nav-item navother classleftone">
                 <a
                   href="/services"
-                  className={`nav-link other-evry-li ${activeLink === '/Blog' ? 'active' : ''}`}
+                  className={`nav-link other-evry-li ${activeLink === '/Blog' ? 'active' : ''} ` }
                   onClick={(event) => handleClick(event, '/Blog')}
                 >
                   Blogs
