@@ -39,6 +39,51 @@
     width: 100%;
 }
 
+.contain-upper {
+  padding-left: 7.3%;
+  padding-right: 7.3%;
+}
+
+.contain-4small-one {
+  padding-left: 10.4%;
+  padding-right: 10.4%;
+}
+
+.contain-slidder-lower,.contain-other-similar {
+  padding-left: 10.2%;
+  padding-right: 10.4%;
+}
+
+.any-con-inert{
+  padding-left: 11.11%;
+  padding-right: 11.11%;
+}
+
+.conk {
+  padding-left: 10.4%;
+  padding-right: 10.4%;
+}
+
+.contaiyy-photos{
+  padding-left: 10.4%;
+  padding-right: 9.2%;
+}
+
+.conteeey{
+  padding-left: 24%;
+  padding-right: 24%;
+}
+
+.contani-may-very{
+  padding-left: 10.34%;
+  padding-right: 10.34%;
+}
+
+.we-section-content {
+  padding-left: 16%;
+  padding-right: 7%;
+}
+
 ul.media-links li {
     padding-bottom: 15px;
   }

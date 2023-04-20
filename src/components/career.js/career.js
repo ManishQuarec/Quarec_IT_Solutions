@@ -1,6 +1,13 @@
+
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+
+
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export default function Career() {
   const htmlString = "<div><p>Hello, world!</p></div>";
@@ -10,6 +17,7 @@ export default function Career() {
   const [JobTitel, setJobTitel] = useState([]);
 
   useEffect(() => {
+
     axios
       .get(process.env.REACT_APP_API_KEY + "/api/getopening")
       .then((response) => {
@@ -74,12 +82,66 @@ export default function Career() {
   //     });
   // };
 
+ 
+
+  const [email, setemail] = useState("")
+  const [phone, setphone] = useState("")
+  const [file, setfile] = useState(null)
+  const [message, setmessage] = useState("")
+  const [txt, setTxt] = useState('');
+  const[option,setoption]=useState("")
+
+  const handleemail = (e) => { setemail(e.target.value) }
+	const handlephone = (e) => {
+		
+		const value=e.target.value
+
+		if(value.length <=10){
+			setphone(value)
+		}
+
+
+	}
+	const handlemessage = (e) => { setmessage(e.target.value) }
+
+  
+ 
+      const onInputChange = e => {
+        const { value } = e.target;
+        console.log('Input value: ', value);
+     
+        const re = /^[A-Za-z- ]+$/;
+        if (value === "" || re.test(value)) {
+          setTxt(value);
+        }
+      }
+
+
+  // const fetchData = () => {
+  //   return fetch("https://0fd7-43-249-54-66.in.ngrok.io/api/getcategory",
+  //     { 
+  //     method: 'Get',
+  //     headers: {
+  //     Accept: 'application/json'
+  //   }
+  // }
+  //   ).then((response) => {
+  //       console.log(response)
+  //     }).then((data) => {
+  //       setUser(data)
+  //       console.log(user, data)
+
+  //     })
+      
+
+  // }
+
   // useEffect(() => {
   //   fetchData();
-  // });
+  // })
 
-  let handleSubmit = async (e) => {
-    e.preventDefault();
+
+
 
     let formData = new FormData();
     formData.append("name", name);
@@ -109,11 +171,83 @@ export default function Career() {
       }
     } catch (err) {
       console.log(err);
+
+  let handleSubmit = (e) => {
+
+    e.preventDefault()
+
+    if (file === null || file === undefined) {
+
+      console.log("jcjcdcdcdcsdc")
+      alert("Please upload a file.");
+      return;
     }
+
+    if(option===""||option==="Select option"){
+      alert("please Select required Option")
+    }
+
+    else{
+      toast.success('Information Saved Successfully', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+
+    }
+    // e.preventDefault();
+
+    // let formData = new FormData();
+    // formData.append('name', name);
+    // formData.append('email', email)
+    // formData.append('phone', phone)
+    // formData.append('message', message)
+    // formData.append('resume', file)
+
+    // console.log(formData)
+
+
+
+    // try {
+    //   let res = await fetch("https://9a0c-43-249-54-66.in.ngrok.io/api/addresume", {
+    //     method: "POST",
+    //     // headers: { 'Content-Type': 'application/json' },
+    //     body: formData,
+    //   });
+    //   let resJson = await res.json();
+
+    //   console.log(resJson)
+    //   if (res.status === 200) {
+    //     console.log("user created successfully")
+    //   } else {
+    //     console.log("Some error occured");
+    //   }
+    // } catch (err) {
+    //   console.log(err);
+
+    
+    // }
   };
 
   return (
     <div>
+
+ <ToastContainer position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light" />
+
       <section className="vitgram-wrapper-section">
         <div className="vitgram-image-wrapper">
           <div className="contact-us-content-wrapper">
@@ -203,6 +337,7 @@ export default function Career() {
                   </div>
                 </div>
                 <div className="schedule-interview-from-wrapper">
+
                   <form
                     action=""
                     method="post"
@@ -235,10 +370,11 @@ export default function Career() {
                             setemail(e.target.value);
                           }}
                         />
-                      </div>
+      </div>
                     </div>
                     <div className="input-field-wrapper d-flex justify-content-between">
                       <div className="name-wrapper-input">
+
                         <input
                           type="text"
                           autoComplete="off"
@@ -266,10 +402,12 @@ export default function Career() {
                           {/* <option value="web development">web development</option> */}
                           {/* <option value="web development">web development</option> */}
                           {/* <option value="web development">web development</option> */}
+
                         </select>
                       </div>
                     </div>
                     <div className="discribe-massege">
+
                       <textarea
                         id="massege"
                         name="massege"
@@ -280,12 +418,14 @@ export default function Career() {
                           setmessage(e.target.value);
                         }}
                       ></textarea>
+
                     </div>
                     <div className="uplaod-documents">
                       <label htmlFor="files" className="btn">
                         Upload Document
                       </label>
                       <span>(.pdf,.doc,.excel)</span>
+
                       <input
                         id="files"
                         style={{ visibility: "hidden" }}
@@ -294,6 +434,7 @@ export default function Career() {
                           setfile(e.target.files[0]);
                         }}
                       />
+
                     </div>
                     <div className="save-information-wrapper">
                       <div className="save-information">
@@ -334,9 +475,11 @@ export default function Career() {
                       </div>
                     </div>
                     <div className="save-information-button">
+
                       <button className="button" value="button">
                         submit
                       </button>
+
                     </div>
                   </form>
                 </div>

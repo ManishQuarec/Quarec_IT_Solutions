@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -30,6 +31,8 @@ export default function Blogs() {
         console.log(error);
       });
   }, []);
+  
+  const navigate =useNavigate()
   //   API End
   return (
     <div>
@@ -40,6 +43,7 @@ export default function Blogs() {
               <h1>blogs</h1>
             </div>
           </div>
+
         </div>
       </section>
       {/* <!-- Portfolio section start --> */}

@@ -6,6 +6,7 @@ export default function Portfolio_inner() {
   const navigate = useNavigate();
   const [Portfolio, setPortfolio] = useState([]);
 
+
   useEffect(() => {
     axios
       .get(process.env.REACT_APP_API_KEY + "/api/getportfolio")
@@ -16,7 +17,12 @@ export default function Portfolio_inner() {
       .catch((error) => {
         console.log(error);
       });
+      
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+      
   }, []);
+  
+  const navigate =useNavigate()
   return (
     <div>
       <section className="vitgram-wrapper-section">
@@ -72,6 +78,12 @@ export default function Portfolio_inner() {
                       />
                     </div>
                   </div>
+
+
+    
+
+
+
 
                   <div class="single-page-content-wrapper-Portfolio">
                     <div class="title-wrapper-single">

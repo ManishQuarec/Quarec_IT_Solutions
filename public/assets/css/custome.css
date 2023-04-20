@@ -59,7 +59,7 @@ ul.header-menu li:last-child {
 }
 
 .d-flex.justify-content-between.align-items-center.gap {
-    gap: 80px;
+    gap: 3%;
 }
 
 .image-wrapper img {
@@ -162,8 +162,8 @@ span.button-in-touch a {
     font-family: 'Raleway';
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 1.3vw;
+    line-height: 19px;
     background-image: linear-gradient(45deg, #055393, #055393);
     transition: background-size 0.5s, color 0.5s;
     background-size: 100% 0%;
@@ -171,6 +171,8 @@ span.button-in-touch a {
     background-repeat: no-repeat;
     position: relative;
 }
+
+
 
 span.button-in-touch a:hover {
     background-size: 100% 100%;
@@ -235,6 +237,8 @@ research-heading {
     position: relative;
 }
 
+
+
 .research-heading h3 {
     font-family: 'Raleway';
     font-style: normal;
@@ -254,6 +258,9 @@ research-heading {
     bottom: 0px;
     right: 105px;
     border-radius: 6px;
+}
+#files{
+    display: none;
 }
 
 .research-heading h3:before {
@@ -500,7 +507,6 @@ section.our-team-section-wrapper {
 }
 
 .Testimonials-wrapper {
-    width: 750px;
     margin: 0px auto;
     padding: 30px;
 }
@@ -560,8 +566,8 @@ section.Testimonials-section-wrapper {
 }
 
 .loader {
-    margin: 0px auto;
-    width: 80% !important;
+    margin: 30px auto;
+    width: 100%;
     height: 14px;
     align-items: center;
     align-content: center;
@@ -943,6 +949,8 @@ ul.social-icon li a:hover {
 }
 
 ul.social-icon.text-alignrigth {
+    width: 83%;
+    margin: 0;
     text-align: left;
     display: flex;
 }
@@ -1291,6 +1299,8 @@ ul.services-menus li a:hover {
 
 footer.footer-section-wrapper {
     padding-top: 100px;
+    padding-left: 7%;
+    padding-right: 10.4%;
 }
 
 .team-image {
@@ -1310,7 +1320,7 @@ footer.footer-section-wrapper {
     overflow: hidden;
 }
 
-.team-image {}
+
 
 .social-meaida {
     position: absolute;
@@ -1547,7 +1557,7 @@ section.plaining-section-wrapper.padding25 {
 
 
 .d-flex.justify-content-between.inner-wrapper-position-gap {
-    gap: 30px;
+    gap: 28px;
     flex-wrap: wrap;
 }
 
@@ -1569,6 +1579,31 @@ section.plaining-section-wrapper.padding25 {
     color: #1568A2;
     margin: 0px;
 }
+
+.contuiiiner{
+    padding-left: 14.6%;
+    padding-right: 14.6%;
+}
+
+.small-counnttiner{
+    padding-left: 9.7%;
+    padding-right: 9.7%;
+}
+
+.your-ploint{
+    padding-left: 14.5%;
+    padding-right: 14.5%;
+}
+
+.your-wany{
+    padding-left: 7.3%;
+    padding-right: 7.3%;
+}
+
+.conttuuuuyr{
+    padding-left: 10.4%;
+    padding-right: 9.2%;
+} 
 
 .position-title h1:after {
     content: "";
@@ -1635,9 +1670,7 @@ section.plaining-section-wrapper.padding25 {
     color: #000000;
 }
 
-.reuriment {
-    width: 324px;
-}
+
 
 section.bulid-customer-wrapper-section {
     padding-top: 181px;
@@ -2145,6 +2178,8 @@ li.border-radius a {
 }
 
 a.nav-item.movetabs.active {
+    margin: 0;
+    padding: 10px 0;
     background: #f69320;
     color: #ffffff;
     height: 100%;
@@ -2244,7 +2279,6 @@ a.redirect-next-page:hover {
 }
 
 .fortfolio-image {
-    height: 240px;
     overflow: hidden;
     border-radius: 10px;
 }
@@ -2570,6 +2604,10 @@ ul#nav-tab {
     justify-content: space-between;
     align-items: center;
     display: flex;
+}
+
+.all-different{
+    width: 8% !important;
 }
 
 /* portfolio css end */
@@ -3036,3 +3074,13 @@ a.nav-item.nav-link.react-tabs {
     width: 100% !important;
     line-height: 1.5;
 }
+
+.cont-portfol{
+    padding-left: 9.8%;
+    padding-right: 9.8%;
+}
+
+.courser-one-it:hover{
+    cursor: pointer;
+}
+

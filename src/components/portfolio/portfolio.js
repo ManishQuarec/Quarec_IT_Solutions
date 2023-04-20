@@ -7,6 +7,7 @@ export default function Portfolio() {
   //   API Start
   const [Portfolio, setPortfolio] = useState([]);
 
+
   useEffect(() => {
     axios
       .get(process.env.REACT_APP_API_KEY + "/api/getportfolio")
@@ -29,6 +30,7 @@ export default function Portfolio() {
               <h1>Portfolio</h1>
             </div>
           </div>
+
         </div>
       </section>
       {/* <!-- Portfolio section start --> */}

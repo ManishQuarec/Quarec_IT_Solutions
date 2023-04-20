@@ -1,5 +1,6 @@
 import React from 'react'
 import './animation.css'
+import { useEffect } from 'react'
 
 export default function Image_imagination() {
 

@@ -1,13 +1,16 @@
+
 import React, { Component } from "react";
 import "./blog_inner.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+
 export default function Blog_inner() {
   const htmlString = "<div><p>Hello, world!</p></div>";
   const navigate = useNavigate(); //   API Start
   const [blogData, setBlogData] = useState([]);
+
 
   useEffect(() => {
     axios
@@ -19,11 +22,18 @@ export default function Blog_inner() {
       .catch((error) => {
         console.log(error);
       });
+      
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
+  
+  
   //   API End
 
   return (
     <div>
+    
+    const navigate = useNavigate()
+
       <div class="MAIN-COntact">
         <div class="upper-sec">
           <div class="head-div">

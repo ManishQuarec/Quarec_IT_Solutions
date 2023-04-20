@@ -1,9 +1,81 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function App_dev() {
 
+    useEffect(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }, []);
+
+    const [email, setemail] = useState("")
+    const [phone, setphone] = useState("")
+    const [file, setfile] = useState()
+    const [message, setmessage] = useState("")
+    const [txt, setTxt] = useState('');
+    const [option, setoption] = useState("")
+
+    const handleemail = (e) => { setemail(e.target.value) }
+    const handlephone = (e) => {
+
+        const value = e.target.value
+
+        if (value.length <= 10) {
+            setphone(value)
+        }
+
+
+    }
+    const handlemessage = (e) => { setmessage(e.target.value) }
+
+
+
+    const onInputChange = e => {
+        const { value } = e.target;
+        console.log('Input value: ', value);
+
+        const re = /^[A-Za-z- ]+$/;
+        if (value === "" || re.test(value)) {
+            setTxt(value);
+        }
+    }
+
+    let handleSubmit = (e) => {
+
+        e.preventDefault()
+
+        if (option === "" || option === "Select option") {
+            alert("please Select required Option")
+        }
+
+        else {
+            toast.success('Information Saved Successfully', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }
+    }
+
+
     return (
         <div>
+            <ToastContainer position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light" />
             <section className="vitgram-wrapper-section">
                 <div className="vitgram-image-wrapper">
                     <div className="contact-us-content-wrapper">
@@ -14,14 +86,15 @@ export default function App_dev() {
             </section>
 
             <section className=" digital-journey-wrapper-section">
-                <div className="container">
+                <div className="contuiiiner">
                     <div className="digital-journey-content-wrapper">
                         <div className="digital-journey-heading"><h1>Your Foray Into The World Of Mobile Apps Begins Here</h1></div>
                     </div>
                     <div className="digital-content-wrapper">
                         <div className="digital-content"><p>Quarec was born at the forefront of the mobile revolution. We are experts in app development, from the White House to the USO, and we’ve only gotten better. We have over 10 years of experience designing, delivering, and supporting world-class mobile applications using our award-winning Agile engineering principles, enabling us to ship over 50 apps each year to the Apple and Google stores.</p></div>
                     </div>
-
+                    </div>
+                     <div className='small-counnttiner'>
                     <div className="d-flex justify-content-between gap20">
                         <div className="plain-and-Process-wrapper width33.33">
                             <div className="d-flex justify-content-between">
@@ -59,8 +132,8 @@ export default function App_dev() {
                 </div>
             </section>
             <section className="bulid-customer-wrapper-section">
-                <div className="container">
-                    <div className="bulid-customer-inner-wrapper">
+                <div className="vgg">
+                    <div className="bulid-customer-inner-wrapper your-wany">
                         <div className="bulid-customer-heading-wrapper">
                             <div className="bulid-customer-heading"><h1>Our Mobile App Development Domain Expertise</h1></div>
                         </div>
@@ -68,7 +141,7 @@ export default function App_dev() {
                             <div className="bulid-customer-content"><p>We have worked extensively with React, and our skills have helped us develop several vibrant web applications. To us, our clients come first, but their appreciation of their end-user’s experience becomes our goal.</p></div>
                         </div>
                     </div>
-                    <div className="web-development-position-wrapper">
+                    <div className="web-development-position-wrapper your-ploint">
                         <div className="d-flex justify-content-between inner-wrapper-position-gap">
                             <div className="web-development-inner-wrapper">
                                 <div className="inner-wrapper-position-wrapper">
@@ -216,7 +289,7 @@ export default function App_dev() {
 
 
             <section className="react-development-stack-section-wrapper">
-                <div className="container">
+                <div className="your-wany">
                     <div className="react-developer-title-wrapper">
                         <div className="inner-title">
                             <h1>UX/UI Design Stack</h1>
@@ -321,7 +394,7 @@ export default function App_dev() {
                 </div>
             </section>
             <section className="customer-centric-wrapper-section">
-                <div className="container">
+                <div className="your-wany">
                     <div className="customer-centric-inner-wrapper">
                         <div className="customer-centric-titile">
                             <h1>A Customer-Centric React Development Firm</h1>
@@ -356,7 +429,7 @@ export default function App_dev() {
             </section>
 
             <section className="customer-centric-wrapper-section-padding">
-                <div className="container">
+                <div className="your-wany">
 
                     <div className="hire-redux-developer-wrapper">
                         <div className="d-flex justify-content-between hire-redux-gap">
@@ -386,7 +459,7 @@ export default function App_dev() {
             </section>
             {/* <!-- schedule interview section start --> */}
             <section className="schedule-interview-section-wrapper">
-                <div className="container">
+                <div className="your-wany">
                     <div className="schedule-interview-title-wrapper">
                         <div className="interview-titile-wrapper">
                             <h1>Schedule A Developer Interview And Get 15 Days Risk-Free Trial</h1>
@@ -396,21 +469,21 @@ export default function App_dev() {
                         </div>
                     </div>
                     <div className="schedule-interview-from-wrapper">
-                        <form action="" method="post" className="fillform-for-interview">
+                        <form  className="fillform-for-interview" onSubmit={(e) =>handleSubmit(e)}>
                             <div className="input-field-wrapper d-flex justify-content-between">
                                 <div className="name-wrapper-input">
-                                    <input type="text" autoComplete="off" required="" placeholder="name" className="form-control input-informaion" />
+                                    <input type="text" autoComplete="off" placeholder="name" required={true} className="form-control input-informaion" value={txt} onChange={onInputChange}  />
                                 </div>
                                 <div className="name-wrapper-input">
-                                    <input type="email" autoComplete="off" required="" placeholder="email" className="form-control input-informaion" />
+                                    <input type="email" autoComplete="off" placeholder="email" required={true} className="form-control input-informaion" onChange={handleemail} />
                                 </div>
                             </div>
                             <div className="input-field-wrapper d-flex justify-content-between">
                                 <div className="name-wrapper-input">
-                                    <input type="text" autoComplete="off" required="" placeholder="Contact Phone" className="form-control input-informaion" />
+                                    <input type="number" autoComplete="off"  placeholder="phone" required={true} className="form-control input-informaion"  value={phone} onChange={handlephone}/>
                                 </div>
                                 <div className="name-wrapper-input">
-                                    <select className="select-option">
+                                    <select className="select-option required" required={true} autoComplete='off'  onChange={(e)=>{setoption(e.target.value)}}>
                                         <option value="Select option">Select option</option>
                                         <option value="web development">web development</option>
                                         <option value="web development">web development</option>
@@ -420,12 +493,14 @@ export default function App_dev() {
                                 </div>
                             </div>
                             <div className="discribe-massege">
-                                <textarea id="massege" name="massege" rows="5" cols="60" placeholder="Description Of Your Business Challenge"></textarea>
+                                <textarea id="massege" name="massege" rows="5" cols="60" placeholder="Description Of Your Business Challenge" onChange={(e) => { setmessage(e.target.value) }} required={true}></textarea>
                             </div>
                             <div className="uplaod-documents">
                                 <label for="files" className="btn">Upload Document</label>
                                 <span>(.pdf,.doc,.excel)</span>
-                                <input id="files" style={{visibility:'hidden'}} type="file" />
+                                <input id="files" required={true} style={{ visibility: 'hidden' }} type="file" onChange={(e) => {
+                        setfile(e.target.files[0] )
+                      }} />
 
                             </div>
                             <div className="save-information-wrapper">
@@ -443,7 +518,7 @@ export default function App_dev() {
                                 </div>
                             </div>
                             <div className="save-information-button">
-                                <button className="button" value="button">submit</button>
+                                <button className="button" type='Submit'>submit</button>
                             </div>
                         </form>
                     </div>
@@ -452,7 +527,7 @@ export default function App_dev() {
             {/* <!-- schedule interview section end -->
 <!-- cta section start --> */}
             <section className="cta-section-wrapper">
-                <div className="container">
+                <div className="your-wany">
                     <div className="cta-inner-wrapper">
                         <div className="d-flex justify-content-between align-items-center cta">
                             <div className="cta-title-wrapper">
