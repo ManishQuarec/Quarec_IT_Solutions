@@ -795,6 +795,7 @@ textarea#comment::placeholder {
 .folow-us {
     padding-bottom: 29px;
 }
+
 ul#nav-tab {
     justify-content: center;
 }
@@ -1302,6 +1303,7 @@ footer.footer-section-wrapper {
 
 .blog-image img {
     width: 100%;
+    height: 300px;
 }
 
 .inner-wrapper-our-team.width {
@@ -2495,7 +2497,7 @@ section.career-developer-information-wrapper {
 
 section.company-overview-wrapper {
     background-color: #F69320;
-   padding: 3vw 0;
+    padding: 3vw 0;
 }
 
 /* .deparment-item.yellow {
