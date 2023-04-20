@@ -163,7 +163,7 @@ export default function Navbar() {
     const [clicked, setclicked] = useState(true)
     const navigate = useNavigate();
     return (
-      <div className=''>
+      <div className='sticky-container'>
         <nav className="navbar navbar-expand-lg  navbar-dark parent" >
           {/* <!-- Brand --> */}
           <a onClick={() => { navigate("/") }} className="navbar-brand" >
