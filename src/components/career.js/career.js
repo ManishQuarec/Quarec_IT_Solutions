@@ -11,7 +11,7 @@ export default function Career() {
 
   const [email, setemail] = useState("")
   const [phone, setphone] = useState("")
-  const [file, setfile] = useState()
+  const [file, setfile] = useState(null)
   const [message, setmessage] = useState("")
   const [txt, setTxt] = useState('');
   const[option,setoption]=useState("")
@@ -69,6 +69,13 @@ export default function Career() {
   let handleSubmit = (e) => {
 
     e.preventDefault()
+
+    if (file === null || file === undefined) {
+
+      console.log("jcjcdcdcdcsdc")
+      alert("Please upload a file.");
+      return;
+    }
 
     if(option===""||option==="Select option"){
       alert("please Select required Option")
@@ -231,9 +238,7 @@ theme="light" />
                     <div className="uplaod-documents">
                       <label htmlFor="files" className="btn">Upload Document</label>
                       <span>(.pdf,.doc,.excel)</span>
-                      <input id="files" required={true} style={{ visibility: 'hidden' }} type="file" onChange={(e) => {
-                        setfile(e.target.files[0] )
-                      }} />
+                      <input id="files" required aria-invalid="true" name='resume-file'  type="file" onChange={(e) => {setfile(e.target.files[0])}} />
 
                     </div>
                     <div className="save-information-wrapper">

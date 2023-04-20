@@ -237,6 +237,8 @@ research-heading {
     position: relative;
 }
 
+
+
 .research-heading h3 {
     font-family: 'Raleway';
     font-style: normal;
@@ -256,6 +258,9 @@ research-heading {
     bottom: 0px;
     right: 105px;
     border-radius: 6px;
+}
+#files{
+    display: none;
 }
 
 .research-heading h3:before {

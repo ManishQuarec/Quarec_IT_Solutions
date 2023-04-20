@@ -94,6 +94,10 @@ ul.navbar-nav {
     margin-left: 0px;
   }
 
+  .classleftone {
+    padding-right: 20px !important;
+}
+
   .orange-parent.active {
     opacity: 1;
 }
