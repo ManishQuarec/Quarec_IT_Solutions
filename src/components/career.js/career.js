@@ -1,13 +1,9 @@
-
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-
-
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Career() {
   const htmlString = "<div><p>Hello, world!</p></div>";
@@ -17,7 +13,6 @@ export default function Career() {
   const [JobTitel, setJobTitel] = useState([]);
 
   useEffect(() => {
-
     axios
       .get(process.env.REACT_APP_API_KEY + "/api/getopening")
       .then((response) => {
@@ -39,7 +34,7 @@ export default function Career() {
         console.log(error);
       });
     console.log(JobTitel);
- 
+
     // code for categoryData
     // axios
     //   .get(process.env.REACT_APP_API_KEY + "/api/getcategory")
@@ -58,13 +53,13 @@ export default function Career() {
 
   // API End
 
-  const [name, setname] = useState("");
-  const [email, setemail] = useState("");
-  const [phone, setphone] = useState("");
-  const [file, setfile] = useState();
-  const [message, setmessage] = useState("");
+  // const [name, setname] = useState("");
+  // const [email, setemail] = useState("");
+  // const [phone, setphone] = useState("");
+  // const [file, setfile] = useState();
+  // const [message, setmessage] = useState("");
 
-  const [user, setUser] = useState({});
+  // const [user, setUser] = useState({});
 
   // const fetchData = () => {
   //   return fetch("https://0fd7-43-249-54-66.in.ngrok.io/api/getcategory", {
@@ -82,44 +77,40 @@ export default function Career() {
   //     });
   // };
 
- 
+  const [email, setemail] = useState("");
+  const [phone, setphone] = useState("");
+  const [file, setfile] = useState(null);
+  const [message, setmessage] = useState("");
+  const [txt, setTxt] = useState("");
+  const [option, setoption] = useState("");
 
-  const [email, setemail] = useState("")
-  const [phone, setphone] = useState("")
-  const [file, setfile] = useState(null)
-  const [message, setmessage] = useState("")
-  const [txt, setTxt] = useState('');
-  const[option,setoption]=useState("")
+  const handleemail = (e) => {
+    setemail(e.target.value);
+  };
+  const handlephone = (e) => {
+    const value = e.target.value;
 
-  const handleemail = (e) => { setemail(e.target.value) }
-	const handlephone = (e) => {
-		
-		const value=e.target.value
+    if (value.length <= 10) {
+      setphone(value);
+    }
+  };
+  const handlemessage = (e) => {
+    setmessage(e.target.value);
+  };
 
-		if(value.length <=10){
-			setphone(value)
-		}
+  const onInputChange = (e) => {
+    const { value } = e.target;
+    console.log("Input value: ", value);
 
-
-	}
-	const handlemessage = (e) => { setmessage(e.target.value) }
-
-  
- 
-      const onInputChange = e => {
-        const { value } = e.target;
-        console.log('Input value: ', value);
-     
-        const re = /^[A-Za-z- ]+$/;
-        if (value === "" || re.test(value)) {
-          setTxt(value);
-        }
-      }
-
+    const re = /^[A-Za-z- ]+$/;
+    if (value === "" || re.test(value)) {
+      setTxt(value);
+    }
+  };
 
   // const fetchData = () => {
   //   return fetch("https://0fd7-43-249-54-66.in.ngrok.io/api/getcategory",
-  //     { 
+  //     {
   //     method: 'Get',
   //     headers: {
   //     Accept: 'application/json'
@@ -132,7 +123,6 @@ export default function Career() {
   //       console.log(user, data)
 
   //     })
-      
 
   // }
 
@@ -140,55 +130,48 @@ export default function Career() {
   //   fetchData();
   // })
 
+  let formData = new FormData();
+  // formData.append("name", name);
+  formData.append("email", email);
+  formData.append("phone", phone);
+  formData.append("message", message);
+  formData.append("resume", file);
 
+  console.log(formData);
 
+  // try {
+  //   let res = await fetch(
+  //     "https://9a0c-43-249-54-66.in.ngrok.io/api/addresume",
+  //     {
+  //       method: "POST",
+  //       // headers: { 'Content-Type': 'application/json' },
+  //       body: formData,
+  //     }
+  //   );
+  //   let resJson = await res.json();
 
-    let formData = new FormData();
-    formData.append("name", name);
-    formData.append("email", email);
-    formData.append("phone", phone);
-    formData.append("message", message);
-    formData.append("resume", file);
-
-    console.log(formData);
-
-    try {
-      let res = await fetch(
-        "https://9a0c-43-249-54-66.in.ngrok.io/api/addresume",
-        {
-          method: "POST",
-          // headers: { 'Content-Type': 'application/json' },
-          body: formData,
-        }
-      );
-      let resJson = await res.json();
-
-      console.log(resJson);
-      if (res.status === 200) {
-        console.log("user created successfully");
-      } else {
-        console.log("Some error occured");
-      }
-    } catch (err) {
-      console.log(err);
+  //   console.log(resJson);
+  //   if (res.status === 200) {
+  //     console.log("user created successfully");
+  //   } else {
+  //     console.log("Some error occured");
+  //   }
+  // } catch (err) {
+  //   console.log(err);
 
   let handleSubmit = (e) => {
-
-    e.preventDefault()
+    e.preventDefault();
 
     if (file === null || file === undefined) {
-
-      console.log("jcjcdcdcdcsdc")
+      console.log("jcjcdcdcdcsdc");
       alert("Please upload a file.");
       return;
     }
 
-    if(option===""||option==="Select option"){
-      alert("please Select required Option")
-    }
-
-    else{
-      toast.success('Information Saved Successfully', {
+    if (option === "" || option === "Select option") {
+      alert("please Select required Option");
+    } else {
+      toast.success("Information Saved Successfully", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -197,8 +180,7 @@ export default function Career() {
         draggable: true,
         progress: undefined,
         theme: "light",
-        });
-
+      });
     }
     // e.preventDefault();
 
@@ -210,8 +192,6 @@ export default function Career() {
     // formData.append('resume', file)
 
     // console.log(formData)
-
-
 
     // try {
     //   let res = await fetch("https://9a0c-43-249-54-66.in.ngrok.io/api/addresume", {
@@ -230,23 +210,23 @@ export default function Career() {
     // } catch (err) {
     //   console.log(err);
 
-    
     // }
   };
 
   return (
     <div>
-
- <ToastContainer position="top-right"
-autoClose={5000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="light" />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
 
       <section className="vitgram-wrapper-section">
         <div className="vitgram-image-wrapper">
@@ -337,7 +317,6 @@ theme="light" />
                   </div>
                 </div>
                 <div className="schedule-interview-from-wrapper">
-
                   <form
                     action=""
                     method="post"
@@ -354,9 +333,9 @@ theme="light" />
                           required=""
                           placeholder="name"
                           className="form-control input-informaion"
-                          onChange={(e) => {
-                            setname(e.target.value);  
-                          }}
+                          // onChange={(e) => {
+                          //   setname(e.target.value);
+                          // }}
                         />
                       </div>
                       <div className="name-wrapper-input">
@@ -370,11 +349,10 @@ theme="light" />
                             setemail(e.target.value);
                           }}
                         />
-      </div>
+                      </div>
                     </div>
                     <div className="input-field-wrapper d-flex justify-content-between">
                       <div className="name-wrapper-input">
-
                         <input
                           type="text"
                           autoComplete="off"
@@ -388,9 +366,7 @@ theme="light" />
                       </div>
                       <div className="name-wrapper-input">
                         <select className="select-option">
-                          <option value="Select option">
-                            Select option
-                          </option>
+                          <option value="Select option">Select option</option>
                           {/* <option value="web development"> */}
                           {/* {categoryData.map((category, index) => (
                             <option key={index}>{category}</option>
@@ -402,12 +378,10 @@ theme="light" />
                           {/* <option value="web development">web development</option> */}
                           {/* <option value="web development">web development</option> */}
                           {/* <option value="web development">web development</option> */}
-
                         </select>
                       </div>
                     </div>
                     <div className="discribe-massege">
-
                       <textarea
                         id="massege"
                         name="massege"
@@ -418,7 +392,6 @@ theme="light" />
                           setmessage(e.target.value);
                         }}
                       ></textarea>
-
                     </div>
                     <div className="uplaod-documents">
                       <label htmlFor="files" className="btn">
@@ -434,7 +407,6 @@ theme="light" />
                           setfile(e.target.files[0]);
                         }}
                       />
-
                     </div>
                     <div className="save-information-wrapper">
                       <div className="save-information">
@@ -475,11 +447,9 @@ theme="light" />
                       </div>
                     </div>
                     <div className="save-information-button">
-
                       <button className="button" value="button">
                         submit
                       </button>
-
                     </div>
                   </form>
                 </div>

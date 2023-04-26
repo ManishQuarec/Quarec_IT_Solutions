@@ -1,42 +1,42 @@
-.image-animation-div{
-    text-align: center;
-           background-image: url("./images/Component 78.png");
-           background-position: center;
-           background-repeat: no-repeat;
-           background-size: 100%;
-           animation: shrink 5s ease infinite alternate;
+.image-animation-div {
+  text-align: center;
+  background-image: url("./images/Component 78.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  animation: shrink 5s ease infinite alternate;
 }
 
 @keyframes shrink {
-    0% {
-      background-size: 80% auto;
-    }
-   
-    100% {
-        background-size: 100% auto;
-      }
+  0% {
+    background-size: 80% auto;
   }
 
-  .big-girl{
-    width: 75%;
-    border-bottom-right-radius: 45%;
-    border-bottom-left-radius: 40%;
+  100% {
+    background-size: 100% auto;
   }
+}
 
-  .postion-realative{
-    position: relative;
-  }
+.big-girl {
+  width: 75%;
+  border-bottom-right-radius: 45%;
+  border-bottom-left-radius: 40%;
+}
 
-  .team-social-wrapper{
-    position: absolute;
-  }
+.postion-realative {
+  position: relative;
+}
 
-  .harkuch-karo{
-    position: relative;
-  }
+.team-social-wrapper {
+  position: absolute;
+}
 
-  .team-one-icon {
-    width: 100%;
+.harkuch-karo {
+  position: relative;
+}
+
+.team-one-icon {
+  width: 100%;
 }
 
 .contain-upper {
@@ -49,12 +49,13 @@
   padding-right: 10.4%;
 }
 
-.contain-slidder-lower,.contain-other-similar {
+.contain-slidder-lower,
+.contain-other-similar {
   padding-left: 10.2%;
   padding-right: 10.4%;
 }
 
-.any-con-inert{
+.any-con-inert {
   padding-left: 11.11%;
   padding-right: 11.11%;
 }
@@ -64,17 +65,17 @@
   padding-right: 10.4%;
 }
 
-.contaiyy-photos{
+.contaiyy-photos {
   padding-left: 10.4%;
   padding-right: 9.2%;
 }
 
-.conteeey{
+.conteeey {
   padding-left: 24%;
   padding-right: 24%;
 }
 
-.contani-may-very{
+.contani-may-very {
   padding-left: 10.34%;
   padding-right: 10.34%;
 }
@@ -85,14 +86,284 @@
 }
 
 ul.media-links li {
-    padding-bottom: 15px;
-  }
-  @media only screen and (max-width: 770px) {
+  padding-bottom: 15px;
+}
+
+@media only screen and (max-width: 770px) {
   ul.media-links li {
     padding-bottom: 10px;
     height: 15%;
   }
-
-  
 }
-  
+
+.A81BOLLs {
+  height: 180px;
+  width: 180px;
+  margin-top: 200px;
+  margin-left: 150px;
+  background: #1568A2;
+  opacity: 0.5;
+  border-radius: 100%;
+  position: absolute;
+  animation: moveRight 15s ease-in-out infinite alternate, moveDown 30s ease-in-out infinite alternate;
+  animation-direction: reverse;
+}
+
+.Boll2 {
+  height: 180px;
+  width: 180px;
+  margin-top: 550px;
+  margin-left: 150px;
+  background: #fff172;
+  opacity: 0.5;
+  border-radius: 100%;
+  position: absolute;
+  animation: moveLeft 15s ease-in-out infinite alternate, moveUp 30s ease-in-out infinite alternate;
+  animation-direction: reverse;
+}
+
+.Boll3 {
+  margin-top: 400px;
+  /* margin-left: 1020px; */
+  background: #1568A2;
+  opacity: 0.5;
+  position: absolute;
+  animation: moveUp 10s ease-in-out infinite alternate;
+  animation-direction: reverse;
+  width: 180px;
+  height: 110px;
+  border-radius: 0 0 300px 300px;
+  transform: rotate(90deg);
+  /* position: sticky; */
+  right: -48px;
+
+}
+
+@keyframes moveRight {
+  0% {
+    left: calc(30% - 50px);
+  }
+
+  50% {
+    left: 0;
+  }
+
+  100% {
+    left: calc(30% - 50px);
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    left: 0;
+  }
+
+  50% {
+    left: calc(30% - 50px);
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    top: 50px;
+  }
+
+  50% {
+    top: 0;
+  }
+
+  100% {
+    top: 50px;
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    top: 0;
+  }
+
+  50% {
+    top: 50px;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+@media only screen and (max-width:2000px) and (min-width:1700px) {
+
+
+  .A81BOLLs {
+    height: 230px;
+    width: 230px;
+    margin-top: 280px;
+    margin-left: 150px;
+  }
+
+  .Boll2 {
+    height: 230px;
+    width: 230px;
+    margin-top: 700px;
+    margin-left: 150px;
+  }
+
+  .Boll3 {
+    width: 230px;
+    height: 130px;
+    border-radius: 0 0 300px 300px;
+    /* right: -30px; */
+  }
+}
+
+@media only screen and (max-width: 1250px) and (min-width: 800px) {
+  .A81BOLLs {
+    height: 120px;
+    width: 120px;
+    margin-top: 200px;
+    margin-left: 100px;
+  }
+
+  .Boll2 {
+    height: 120px;
+    width: 120px;
+    margin-top: 540px;
+    margin-left: 100px;
+  }
+
+  .Boll3 {
+    margin-top: 350px;
+    width: 120px;
+    height: 60px;
+    border-radius: 0 0 300px 300px;
+    right: -30px;
+  }
+}
+
+@media only screen and (max-width: 800px) and (min-width: 70px) {
+
+  .A81BOLLs {
+    height: 90px;
+    width: 90px;
+    margin-top: 200px;
+    margin-left: 100px;
+    z-index: -1;
+
+  }
+
+  .Boll2 {
+    height: 90px;
+    width: 90px;
+    margin-top: 400px;
+    margin-left: 100px;
+    z-index: -1;
+  }
+
+  .Boll3 {
+    margin-top: 350px;
+    width: 100px;
+    height: 60px;
+    border-radius: 0 0 300px 300px;
+    right: -19px;
+  }
+}
+
+@media only screen and (max-width: 700px) and (min-width: 500px) {
+  .A81BOLLs {
+    height: 90px;
+    width: 90px;
+    margin-top: 100px;
+    margin-left: 100px;
+    z-index: -1;
+
+  }
+
+  .Boll2 {
+    height: 90px;
+    width: 90px;
+    margin-top: 300px;
+    margin-left: 100px;
+    z-index: -1;
+  }
+
+  .Boll3 {
+    margin-top: 200px;
+    width: 100px;
+    height: 60px;
+    border-radius: 0 0 300px 300px;
+    right: -19px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .Boll3 {
+    margin-top: 660px;
+    width: 70px;
+    height: 40px;
+    right: -13px;
+  }
+
+  .A81BOLLs {
+    height: 80px;
+    width: 80px;
+    margin-top: 530px;
+    margin-left: 10px;
+    z-index: 1;
+  }
+
+  .Boll2 {
+    height: 80px;
+    width: 80px;
+    margin-top: 680px;
+    margin-left: 10px;
+    z-index: 1;
+  }
+}
+
+@media all and (max-width: 450px) {
+  .Boll2 {
+    height: 60px;
+    width: 60px;
+    margin-top: 600px;
+  }
+
+  .A81BOLLs {
+    height: 60px;
+    width: 60px;
+  }
+
+  .Boll3 {
+    margin-top: 540px;
+    width: 70px;
+    height: 40px;
+    right: -13px;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .A81BOLLs {
+    margin-top: 470px;
+  }
+
+  .Boll2 {
+    margin-top: 580px;
+  }
+}
+
+@media all and (max-width: 350px) {
+  .Boll3 {
+    margin-top: 460px;
+  }
+
+  .A81BOLLs {
+    margin-top: 400px;
+  }
+
+  .Boll2 {
+    margin-top: 500px;
+  }
+}

@@ -1,28 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useLocation } from "react-router-dom";
 
 export default function Portfolio_inner() {
   const navigate = useNavigate();
-  const [Portfolio, setPortfolio] = useState([]);
+  const { state } = useLocation();
+  const data = state;
+  console.log(data);
+  const [portdata, setPortdata] = useState(data.props);
+  console.log(portdata);
 
+  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 
-  useEffect(() => {
-    axios
-      .get(process.env.REACT_APP_API_KEY + "/api/getportfolio")
-      .then((response) => {
-        setPortfolio(response.data.data);
-        console.log(response.data.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-      
-      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-      
-  }, []);
-  
-  const navigate =useNavigate()
   return (
     <div>
       <section className="vitgram-wrapper-section">
@@ -59,51 +49,41 @@ export default function Portfolio_inner() {
                 <div class="vitgram-content">
                   <p>
                     Home / Portfolio / Web Development / Secret 17 - Hair & Nail
-                    Studio{" "}
+                    Studio
                   </p>
                 </div>
               </div>
             </div>
-            {Array.isArray(Portfolio) &&
-              Portfolio.map((getportfolio, index) => (
-                <div>
-                  <div class="single-fortfolio-image-wrapper">
-                    <div class="single-Portfolio-image">
-                      <img
-                        src={
-                          process.env.REACT_APP_API_KEY +
-                          `${getportfolio.portfolio_image}`
-                        }
-                        alt="not Found"
-                      />
-                    </div>
-                  </div>
-
-
-    
-
-
-
-
-                  <div class="single-page-content-wrapper-Portfolio">
-                    <div class="title-wrapper-single">
-                      <div class="title-single">
-                        <h1>{getportfolio.title}</h1>
-                      </div>
-                    </div>
-                    <div class="Portfolio-single-page-discription">
-                      <div class="discriptions">
-                        <p>{getportfolio.description}</p>
-                      </div>
-                      <div class="diffrent-position">
-                        <p>{getportfolio.tags}</p>
-                      </div>
-                    </div>
+            <div>
+              <div class="single-fortfolio-image-wrapper">
+                <div class="single-Portfolio-image">
+                  <img
+                    src={
+                      process.env.REACT_APP_API_KEY +
+                      `${portdata.portfolio_image}`
+                    }
+                    alt="not Found"
+                  />
+                </div>
+              </div>
+              <div class="single-page-content-wrapper-Portfolio">
+                <div class="title-wrapper-single">
+                  <div class="title-single">
+                    <h1>{portdata.title}</h1>
                   </div>
                 </div>
-              ))}
+                <div class="Portfolio-single-page-discription">
+                  <div class="discriptions">
+                    <p>{portdata.description}</p>
+                  </div>
+                  <div class="diffrent-position">
+                    <p>{portdata.tags}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            <div class="more-projects-wrapper">
+            {/* <div class="more-projects-wrapper">
               <div class="more-projecr-wrapper-title">
                 <div class="more-projects">
                   <h1>More Projects</h1>
@@ -113,7 +93,7 @@ export default function Portfolio_inner() {
                 <div class="inner-fortfolio-content">
                   <div class="fortfolio-image-wrapper">
                     <div class="fortfolio-image">
-                      <img src="assets/images/portfolioappdev8.png" alt=""/>
+                      <img src="assets/images/portfolioappdev8.png" alt="" />
                     </div>
                   </div>
                   <div class="fortfolio-content-wrapper">
@@ -137,7 +117,7 @@ export default function Portfolio_inner() {
                 <div class="inner-fortfolio-content">
                   <div class="fortfolio-image-wrapper">
                     <div class="fortfolio-image">
-                      <img src="assets/images/portfolioappdev8.png" alt=""/>
+                      <img src="assets/images/portfolioappdev8.png" alt="" />
                     </div>
                   </div>
                   <div class="fortfolio-content-wrapper">
@@ -159,7 +139,7 @@ export default function Portfolio_inner() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
